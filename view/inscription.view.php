@@ -16,6 +16,7 @@
         <input type="text" name="mdp" required/>
         
         <input type="submit" value="INSCRIPTION">
+        <p><a href="connect.php">J'ai déjà un compte</a></p>
     </form>
 </main>
 
