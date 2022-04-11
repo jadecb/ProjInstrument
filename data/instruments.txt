@@ -1,0 +1,1 @@
+numArticle|familleInstrument|typeInstrument|sousTypeInstrument|nom|prix|couleur|largeur|longueur|hauteur|materiauxBoitier|materiauxManche|typeFinition|nbrBouton|numArticle|nbrTrou|nbrTube|nbrTouche|nbrSon|typePeau|typeCalebasse|quantite
