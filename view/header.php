@@ -15,8 +15,8 @@
 					<li><a href="inscription.ctrl.php">S'inscrire</a></li>
 					<li><a href="#">Se connecter</a></li>
 					<li><a href="#">Catalogue</a></li>
-					<li><a href="#">Comments book</a></li>
-					<li><a href="#">Who we are</a></li>
+					<li><a href="#">Panier</a></li>
+					<li><a href="#">Historique</a></li>
       </ul>
       </nav>
   </header>
