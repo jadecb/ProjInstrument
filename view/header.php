@@ -11,6 +11,12 @@
       <h1>Sibémol</h1>
         <!-- Navigation -->
       <nav>
-
+      <ul>
+					<li><a href="inscription.ctrl.php">S'inscrire</a></li>
+					<li><a href="#">Se connecter</a></li>
+					<li><a href="#">Catalogue</a></li>
+					<li><a href="#">Comments book</a></li>
+					<li><a href="#">Who we are</a></li>
+      </ul>
       </nav>
   </header>

@@ -10,6 +10,6 @@ require_once(__DIR__.'/../framework/view.fw.php');
 
 $view = new View();
 
-$view->display('index.view.php');
+$view->display('inscription.view.php');
 
 ?>
