@@ -49,3 +49,4 @@ CREATE TABLE Instrument(
    PRIMARY KEY(numArticle)
 );
 
+INSERT INTO Client VALUES (1,"Rickie","Paul","ruedelarepublique","paulgmail",02/04/2000);
