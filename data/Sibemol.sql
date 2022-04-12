@@ -9,6 +9,4 @@ CREATE TABLE Client(
    PRIMARY KEY(numClient)
 );
 
-
-
 INSERT INTO Client VALUES (1,"admin","admin","paul@gmail.com","2000-02-02", "12345678", true);
