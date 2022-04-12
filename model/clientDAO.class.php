@@ -38,7 +38,7 @@ class ClientDAO{
         $dao = new ClientDAO(); // instancie l'objet DAO
         $req = 'SELECT * FROM Client WHERE mail="'.$mail.'" AND mdp="'.$mdp.'"';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
 
