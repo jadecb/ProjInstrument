@@ -36,8 +36,8 @@ class ClientDAO{
     // Ajout un client dans la base
     function ajoutClient(Client $c) : void {
         $dao = new ClientDAO(); // instancie l'objet DAO
-        $admin = ($c->admin==FALSE)?0:1;
-        $req = 'INSERT INTO Client VALUES ('.$c->numClient.',"'.$c->nom.'","'.$c->prenom.'","'.$c->mail.'","'.$c->dateNaissance.'","'.$c->mdp.'",'.$admin.')';
+        $gestionnaire = ($c->gestionnaire==FALSE)?0:1;
+        $req = 'INSERT INTO Client VALUES ('.$c->numClient.',"'.$c->nom.'","'.$c->prenom.'","'.$c->mail.'","'.$c->dateNaissance.'","'.$c->mdp.'",'.$gestionnaire.')';
         $sth = $this->db->exec($req);
     }
 
