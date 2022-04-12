@@ -1,9 +1,9 @@
 <?php
 
-require_once(dirname(__FILE__.'/accordeon.class.php'));
+require_once(dirname(__FILE__.'/piano.class.php'));
 
-// Data Access Object pour Accordeon
-class AccordeonDAO{
+// Data Access Object pour piano
+class PianoDAO{
     private $db;
 
   // Constructeur chargé d'ouvrir la BD
@@ -16,22 +16,22 @@ class AccordeonDAO{
         }
     }
 
-    // Renvoi un tableau contenant les info de l'accordeon, le tableau est vide si l'accordeon n'existe pas
-    function getAccordeon(int $numArticle) : array{
-        $dao = new AccordeonDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon WHERE ia.numArticle='.$numarticle;
+    // Renvoi un tableau contenant les info de la piano, le tableau est vide si la piano n'existe pas
+    function getPiano(int $numArticle) : array{
+        $dao = new PianoDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, p.nbrTouche, p.materiauxTouche FROM infoArticle ia, infoInstrument ii, piano p WHERE ia.numArticle='.$numarticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
     }
-    // Ajout un accordeon dans la base
-    function ajoutAccordeon(Accordeon $a) : void {
-        $dao = new AccordeonDAO(); // instancie l'objet DAO
+    // Ajout un piano dans la base
+    function ajoutPiano(Piano $a) : void {
+        $dao = new PianoDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nom.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->familleInstrument.'","'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Accordeon VALUES ('.$a->numArticle.','.$a->nbrBouton.')';
+        $req = 'INSERT INTO piano VALUES ('.$a->numArticle.','.$a->nbrTouche.','.$a->materiauxTouche.')';
         $sth = $this->db->exec($req);
     }
 
