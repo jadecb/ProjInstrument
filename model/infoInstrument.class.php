@@ -8,7 +8,7 @@ abstract class infoInstrument extends infoArticle{
     private int $hauteur;
     private string $familleInstrument;
 
-    function __construct(int $numArticle, string $nom, int $prix, string $materiauxPrincipal='', string $couleur='', int $largeur=0,
+    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $materiauxPrincipal='', string $couleur='', int $largeur=0,
     int $longueur=0, int $hauteur=0, string $familleInstrument='') {
         parent::__construct($numArticle, $nom, $prix);
         $this->materiauxPrincipal = $materiauxPrincipal;
@@ -19,7 +19,14 @@ abstract class infoInstrument extends infoArticle{
         $this->familleInstrument = $familleInstrument;
 
     }
-
+    public function __get(string $name){
+        if(isset($this->$name) && !empty($this->$name)){
+            return $this->$name;
+        }
+        else{
+            return NULL;
+        }
+    }
 
 }
 
