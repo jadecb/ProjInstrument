@@ -11,14 +11,14 @@
   <header>
       <a id="index" href="index.ctrl.php"><h1>Sibémol</h1></a>
 
-      <?php if(isset($_SESSION['prenom'])): ?>
-        <p>bonjour <?=$_SESSION['prenom']?></p>
+      <?php if(isset($prenom)): ?>
+        <p>bonjour <?=$prenom?></p>
       <?php endif; ?>
 
         <!-- Navigation -->
       <nav>
       <ul>
-      <?php if(!isset($_SESSION['prenom'])): ?>
+      <?php if(!isset($prenom)): ?>
         <li><a href="inscription.ctrl.php">S'inscrire</a></li>
         <li><a href="connect.ctrl.php">Se connecter</a></li>
       <?php endif; ?>
@@ -26,12 +26,12 @@
       <li><a href="#">Catalogue</a></li>
       <li><a href="#">Panier</a></li>
 
-      <?php if(isset($_SESSION['prenom'])): ?>
+      <?php if(isset($prenom)): ?>
         <li><a href="#">Historique</a></li>
         <li><a href="deconnect.ctrl.php">Se déconnecter</a></li>
       <?php endif; ?>
 
-      <?php if(isset($_SESSION['gestionnaire'])&&$_SESSION['gestionnaire']==true): ?>
+      <?php if(isset($gestionnaire)): ?>
         <li><a href="gestionArticle.ctrl.php">gestion article</a></li>
       <?php endif; ?>
 
