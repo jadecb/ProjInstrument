@@ -16,7 +16,7 @@
         <input type="password" name="mdp" minlength="8" required/>
         
         <input type="submit" value="INSCRIPTION">
-        <p><a href="connect.php">J'ai déjà un compte</a></p>
+        <p><a href="connect.ctrl.php">J'ai déjà un compte</a></p>
     </form>
 </main>
 

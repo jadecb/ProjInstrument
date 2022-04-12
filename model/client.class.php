@@ -9,7 +9,7 @@ class Client{
     private string $dateNaissance; // format : yyyy/mm/dd
     private string $mail;
     private string $mdp;
-    private bool $admin;
+    private bool $gestionnaire;
 
     function __construct(int $numClient, string $prenom='', string $nom='',
     string $adresse='', string $dateNaissance='', string $mail='',
@@ -21,7 +21,7 @@ class Client{
         $this->dateNaissance = $dateNaissance;
         $this->mail = $mail;
         $this->mdp = $mdp;
-        $this->admin = false;
+        $this->gestionnaire = false;
     }
 
     public function __get(string $name){
