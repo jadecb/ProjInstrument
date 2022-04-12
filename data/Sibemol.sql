@@ -5,6 +5,8 @@ CREATE TABLE Client(
    prenom VARCHAR(50),
    mail VARCHAR(100),
    dateNaissance DATE,
+   mdp VARCHAR(50),
+   gestionnaire boolean,
    PRIMARY KEY(numClient)
 );
 
