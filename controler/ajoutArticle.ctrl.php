@@ -32,6 +32,6 @@ if(isset($gestionnaire)){
     $view->assign('gestionnaire',$gestionnaire);
 }
 
-$view->display('ajoutInfoArticle.view.php');
+$view->display('ajoutArticle.view.php');
 
 ?>

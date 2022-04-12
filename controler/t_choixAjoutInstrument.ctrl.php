@@ -18,30 +18,27 @@ else{
     header('Location: index.ctrl.php');
 }
 
-if(isset($_GET['article'])){
-    $article = $_GET['article'];
+if(isset($_GET['instrument'])){
+    $instrument = $_GET['instrument'];
 }
+else{
+    header('Location: choixAjoutInstrument.ctrl.php');
+}
+
 /* *** PARTIE USAGE DU MODELE *** */
+
+require('../model/InstrumentsAttributs');
+$instrumentAttribut = $InstrumentsAttributs[$instrument];
 
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
 
-if(isset($prenom)){
-    $view->assign('prenom',$prenom);
-}
 
-if(isset($gestionnaire)){
-    $view->assign('gestionnaire',$gestionnaire);
-}
-
-if($article == "instrument"){
-    $view->display('ajoutInfoInstrument.view.php');
-}
-else {
-    $view->display('ajoutInfoArticle.view.php');
-}
-
-
+$view->assign('prenom',$prenom);
+$view->assign('gestionnaire',$gestionnaire);
+$view->assign('instrument',$instrument);
+$view->assign('instrumentAttribut',$instrumentAttribut);
+$view->display('ajoutInstrument.view.php');
 
 ?>
