@@ -31,6 +31,13 @@ if(!empty($infoClient)){
 $view = new View();
 
 if(!empty($infoClient)){
+    if(isset($_SESSION['prenom'])){
+        $view->assign('prenom',$_SESSION['prenom']);
+    }
+    
+    if(isset($_SESSION['gestionnaire'])){
+        $view->assign('gestionnaire',$_SESSION['gestionnaire']);
+    }
     $view->display('index.view.php');
 }
 else{
