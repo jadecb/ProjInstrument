@@ -20,7 +20,7 @@ class BanjoDAO{
     // Renvoi un tableau contenant les info du banjo, le tableau est vide si le banjo n'existe pas
     function getBanjo() : array {
         $dao = new BanjoDAO(); // instancie l'objet DAO
-        $req = 'SELECT * FROM infoArticle iA, infoInstrument iI, banjo b where iA.numArticle='.$numArticle ;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, b.nbrcorde  FROM infoArticle iA, infoInstrument iI, banjo b where iA.numArticle='.$numArticle ;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return intval($resArray);
