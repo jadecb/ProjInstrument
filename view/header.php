@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-      <a href="../index.php"><h1>Sibémol</h1></a>
+      <a id="index" href="../index.php"><h1>Sibémol</h1></a>
 
       <?php if(isset($_SESSION['prenom'])): ?>
         <p>bonjour <?=$_SESSION['prenom']?></p>
