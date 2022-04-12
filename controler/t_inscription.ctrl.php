@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
 require_once('../model/client.class.php');
 require_once('../model/clientDAO.class.php');

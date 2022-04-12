@@ -38,7 +38,7 @@ class ClientDAO{
         $dao = new ClientDAO(); // instancie l'objet DAO
         $req = 'SELECT * FROM Client WHERE mail="'.$mail.'" AND mdp="'.$mdp.'"';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
 
@@ -48,7 +48,6 @@ class ClientDAO{
         $gestionnaire = ($c->gestionnaire==FALSE)?0:1;
         $req = 'INSERT INTO Client VALUES ('.$c->numClient.',"'.$c->nom.'","'.$c->prenom.'","'.$c->mail.'","'.$c->dateNaissance.'","'.$c->mdp.'",'.$gestionnaire.')';
         $sth = $this->db->exec($req);
-
     }
 
 }
