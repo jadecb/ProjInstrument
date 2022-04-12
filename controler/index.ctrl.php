@@ -21,7 +21,7 @@ if(isset($prenom)){
 }
 
 if(isset($gestionnaire)){
-    $view->assign('prenom',$gestionnaire);
+    $view->assign('gestionnaire',$gestionnaire);
 }
 
 $view->display('index.view.php');

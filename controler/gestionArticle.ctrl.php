@@ -16,6 +16,14 @@ if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
 
 $view = new View();
 
+if(isset($prenom)){
+    $view->assign('prenom',$prenom);
+}
+
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
+}
+
 $view->display('index.view.php');
 
 
