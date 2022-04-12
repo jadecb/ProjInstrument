@@ -40,11 +40,15 @@ $client = new Client($clientDAO->getDernierNumClient()+1, $prenom, $nom, $adress
 $view = new View();
 
 if($clientDAO->mailExists($mail)){
-    $view->display('index.view.php');
+    $mailExistant = "mailExistant";
+    $view->assign('mailExistant', $mailExistant);
+    $view->display('inscription.view.php');
 }
 else{
     $clientDAO->ajoutClient($client);
-    $view->display('inscription.view.php');
+    $nouvelementInscrit = "oui";
+    $view->assign('nouvelementInscrit', $nouvelementInscrit);
+    $view->display('connect.view.php');
 }
 
 ?>

@@ -28,6 +28,15 @@ if(!empty($infoClient)){
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-$view->display('index.view.php');
+
+if(!empty($infoClient)){
+    $view->display('connect.view.php');
+}
+else{
+    $mauvaisId = "mauvaisId";
+    $view->assign('mauvaisId', $mauvaisId);
+    $view->display('connect.view.php');
+}
+
 
 ?>

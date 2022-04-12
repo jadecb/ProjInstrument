@@ -17,6 +17,10 @@
         
         <input type="submit" value="INSCRIPTION">
         <p><a href="connect.ctrl.php">J'ai déjà un compte</a></p>
+
+        <?php if(isset($mailExistant)) : ?>
+        <p>Un client utilise déjà ce mail</p>
+        <?php endif; ?>
     </form>
 </main>
 
