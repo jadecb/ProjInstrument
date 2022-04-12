@@ -9,12 +9,11 @@
 <body>
   <header>
       <h1>Sibémol</h1>
+
       <?php if(isset($_SESSION['prenom'])): ?>
         <p>bonjour <?=$_SESSION['prenom']?></p>
       <?php endif; ?>
 
-    
-      <p></p>
         <!-- Navigation -->
       <nav>
       <ul>
@@ -22,7 +21,10 @@
           <li><a href="connect.ctrl.php">Se connecter</a></li>
           <li><a href="#">Catalogue</a></li>
           <li><a href="#">Panier</a></li>
-          <li><a href="#">Historique</a></li>
+          <?php if(isset($_SESSION['prenom'])): ?>
+            <li><a href="#">Historique</a></li>
+          <?php endif; ?>
+
       </ul>
       </nav>
   </header>
