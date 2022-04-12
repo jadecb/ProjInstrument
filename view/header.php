@@ -17,10 +17,11 @@
         <!-- Navigation -->
       <nav>
       <ul>
-          <?php if(!isset($_SESSION['prenom'])): ?>
-            <li><a href="inscription.ctrl.php">S'inscrire</a></li>
-            <li><a href="connect.ctrl.php">Se connecter</a></li>
-          <?php endif; ?>
+      <?php if(!isset($_SESSION['prenom'])): ?>
+        <li><a href="inscription.ctrl.php">S'inscrire</a></li>
+        <li><a href="connect.ctrl.php">Se connecter</a></li>
+      <?php endif; ?>
+
           <li><a href="#">Catalogue</a></li>
           <li><a href="#">Panier</a></li>
 
