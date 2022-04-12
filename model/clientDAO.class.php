@@ -33,12 +33,22 @@ class ClientDAO{
         return !empty($resArray);
     }
 
+    // Recherche l'existence d'un client : true si existe, false sinon
+    function clientExists(string $mail, string $mdp) : bool{
+        $dao = new ClientDAO(); // instancie l'objet DAO
+        $req = 'SELECT * FROM Client WHERE mail="'.$mail.'" && mdp ="'.$mdp.'"';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
+        return !empty($resArray);
+    }
+
     // Ajout un client dans la base
     function ajoutClient(Client $c) : void {
         $dao = new ClientDAO(); // instancie l'objet DAO
         $gestionnaire = ($c->gestionnaire==FALSE)?0:1;
         $req = 'INSERT INTO Client VALUES ('.$c->numClient.',"'.$c->nom.'","'.$c->prenom.'","'.$c->mail.'","'.$c->dateNaissance.'","'.$c->mdp.'",'.$gestionnaire.')';
         $sth = $this->db->exec($req);
+        
     }
 
 }
