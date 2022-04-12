@@ -39,7 +39,7 @@ class ClientDAO{
         $req = 'SELECT * FROM Client WHERE mail="'.$mail.'" AND mdp="'.$mdp.'"';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
-        return $resArray[0];
+        return $resArray;
     }
 
     // Ajout un client dans la base

@@ -20,7 +20,7 @@ $clientDAO = new ClientDAO();
 
 $infoClient = $clientDAO->getClient($mail, $mdp);
 if(!empty($infoClient)){
-    foreach($infoClient as $key => $value){
+    foreach($infoClient[0] as $key => $value){
         $_SESSION[$key] = $value;
     }
 }
@@ -28,6 +28,15 @@ if(!empty($infoClient)){
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-$view->display('index.view.php');
+
+if(!empty($infoClient)){
+    $view->display('index.view.php');
+}
+else{
+    $mauvaisId = "mauvaisId";
+    $view->assign('mauvaisId', $mauvaisId);
+    $view->display('connect.view.php');
+}
+
 
 ?>

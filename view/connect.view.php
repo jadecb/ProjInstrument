@@ -1,6 +1,10 @@
 <?php require("../view/header.php"); ?>
 
 <main>
+    <?php if(isset($nouvelementInscrit)) : ?>
+        <p>Inscription bien enregistrée, vous pouvez vous connecter !</p>
+    <?php endif; ?>
+
     <form action="t_connect.ctrl.php" method="get">
         <label for="mail">Mail : </label>
         <input type="email" name="mail" required/>
