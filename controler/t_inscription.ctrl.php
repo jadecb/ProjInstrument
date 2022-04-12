@@ -39,7 +39,7 @@ $client = new Client($clientDAO->getDernierNumClient()+1, $prenom, $nom, $adress
 
 $view = new View();
 
-if($clientDAO->mailExists()){
+if($clientDAO->mailExists($mail)){
     $view->display('index.view.php');
 }
 else{
