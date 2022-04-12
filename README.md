@@ -1,2 +1,2 @@
 # ProjInstrument
-Projet effectuer effectué par groupe de 3 lors du DUT Informatique. 
+Projet effectué par groupe de 3 lors du DUT Informatique. 
