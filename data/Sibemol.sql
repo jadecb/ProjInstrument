@@ -24,7 +24,7 @@ CREATE TABLE infoInstrument(
    materiauxPrincipal VARCHAR(50),
    couleur INT,
    largeur INT,
-   longeur INT,
+   longueur INT,
    hauteur INT,
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoArticle(numArticle)
