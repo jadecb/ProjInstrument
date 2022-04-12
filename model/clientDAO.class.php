@@ -40,6 +40,7 @@ class ClientDAO{
         $sth = $this->db->exec($req);
     }
 
+void createUser(Client client);
 }
 
 ?>
