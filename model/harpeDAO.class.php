@@ -31,7 +31,7 @@ class HarpeDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->familleInstrument.'","'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Harpe VALUES ('.$a->numArticle.', "'$a->type'", '.$a->nbrCorde.')';
+        $req = 'INSERT INTO Harpe VALUES ('.$a->numArticle.', "'.$a->type.'", '.$a->nbrCorde.')';
         $sth = $this->db->exec($req);
     }
 
