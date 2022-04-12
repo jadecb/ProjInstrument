@@ -2,7 +2,7 @@
 
 require_once(dirname(__FILE__.'/accordeon.class.php'));
 
-// Data Access Object pour Client
+// Data Access Object pour Accordeon
 class AccordeonDAO{
     private $db;
 
@@ -25,7 +25,7 @@ class AccordeonDAO{
         return $resArray;
     }
     // Ajout un accordeon dans la base
-    function ajoutClient(Accordeon $a) : void {
+    function ajoutAccordeon(Accordeon $a) : void {
         $dao = new AccordeonDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nom.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
