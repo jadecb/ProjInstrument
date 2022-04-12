@@ -48,7 +48,6 @@ class ClientDAO{
         $gestionnaire = ($c->gestionnaire==FALSE)?0:1;
         $req = 'INSERT INTO Client VALUES ('.$c->numClient.',"'.$c->nom.'","'.$c->prenom.'","'.$c->mail.'","'.$c->dateNaissance.'","'.$c->mdp.'",'.$gestionnaire.')';
         $sth = $this->db->exec($req);
-
     }
 
 }
