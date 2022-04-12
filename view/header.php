@@ -26,7 +26,7 @@
 
           <?php if(isset($_SESSION['prenom'])): ?>
             <li><a href="#">Historique</a></li>
-            <li><a href="#">Se déconnecter</a></li>
+            <li><a href="deconnect.ctrl.php">Se déconnecter</a></li>
           <?php endif; ?>
 
       </ul>
