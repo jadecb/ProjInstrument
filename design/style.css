@@ -1,0 +1,78 @@
+*, ::after, ::before{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+	--dark-blue : rgb(19,25,33);
+    --dark-grey : rgb(55,71,90);
+	--marine-blue : rgb(35,47,62);
+	--white : rgb(250,250,250);
+	--orange : rgb(254,189,105);
+}
+
+/*****************************/
+/**********HEADER*************/
+/*****************************/
+
+header{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1em;
+	background-color: var(--dark-blue);
+}
+
+header h1{
+	color : var(--white);
+	font-size: 3em;
+}
+
+header a{
+	text-decoration: none;
+	color: var(--white);
+}
+
+header a:hover{
+	border: 1px solid var(--white);
+	background-color: var(--orange);
+	color: var(--dark-blue);
+}
+
+header nav ul{
+	display: flex;
+	justify-content:center;
+	list-style: none;
+}
+
+header nav{
+	background-color: var(--dark-grey);
+	width: 100%;
+}
+
+header nav ul li{
+	margin: 1.5em 0;
+}
+
+header nav ul li a{
+	text-transform: uppercase;
+    padding: 1.5em;
+}
+
+
+/*****************************/
+/**********FOOTER*************/
+/*****************************/
+
+footer{
+	padding: 1em;
+	background-color: var(--marine-blue);
+	font-size: 0.9em;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+}
+
+footer a{
+	color: var(--orange);
+	text-decoration: none;
+}
