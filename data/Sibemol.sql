@@ -2,9 +2,9 @@ CREATE TABLE Client(
    numClient INT,
    nom VARCHAR(50),
    prenom VARCHAR(50),
-   adresse VARCHAR(150),
    mail VARCHAR(100),
    dateNaissance DATE,
+   mdp VARCHAR(50),
    gestionnaire boolean,
    PRIMARY KEY(numClient)
 );

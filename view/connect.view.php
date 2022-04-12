@@ -10,6 +10,9 @@
         <input type="submit" value="CONNECTION">
         <p><a href="inscription.ctrl.php">Je n'ai pas de compte</a></p>
     </form>
+    <?php if(isset($mauvaisId)) : ?>
+        <p>Mauvais mail ou mot de passe</p>
+    <?php endif; ?>
 </main>
 
 <?php require("../view/footer.php"); ?>
