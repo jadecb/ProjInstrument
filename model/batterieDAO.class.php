@@ -19,7 +19,7 @@ class BatterieDAO{
     // Renvoi un tableau contenant les info de la Batterie, le tableau est vide si la Batterie n'existe pas
     function getBatterie(int $numArticle) : array{
         $dao = new BatterieDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, b.type, b.typePeau; FROM infoArticle ia, infoInstrument ii, Batterie b WHERE ia.numArticle='.$numarticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, b.type, b.typePeau FROM infoArticle ia, infoInstrument ii, Batterie b WHERE ia.numArticle='.$numarticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
