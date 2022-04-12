@@ -37,7 +37,6 @@ header a{
 }
 
 header a:hover{
-	border: 1px solid var(--white);
 	background-color: var(--orange);
 	color: var(--dark-blue);
 }
@@ -80,3 +79,51 @@ footer a{
 	color: var(--orange);
 	text-decoration: none;
 }
+
+a{
+	text-decoration: none;
+}
+
+
+/***************************/
+/*********FORMS*************/
+/***************************/
+
+fieldset{
+	margin-left: 35%;
+	margin-right: 35%;
+	border-width: 5px;
+}
+
+main form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+main form fieldset{
+	display:flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+main form fieldset label{
+	margin:0.5em;
+}
+
+input[type=submit]{
+    font-size: 0.8em;
+	color:var(--white);
+    padding: 0.5em;
+    margin: 1em 0;
+    background-color: var(--dark-grey);
+    border: 1px solid var(--glowy-pink);
+}
+input[type=submit]:hover{
+    cursor: pointer;
+    background-color: var(--orange);
+    align-self: center;
+    color: var(--dark-blue);
+}
+
