@@ -34,7 +34,6 @@ require_once(__DIR__.'/../model/'.$instrument.'DAO.class.php');
 
 /* *** PARTIE USAGE DU MODELE *** */
 
-var_dump($instrument);
 // DAO
 $DAO = $instrument.'DAO';
 $DAO = new $DAO();
