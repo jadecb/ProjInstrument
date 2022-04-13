@@ -194,9 +194,9 @@ insert into infoInstrument values (45,'bois', 'flamme',120,50.50,30);
 insert into Guitare values (45, 'érable', 'basse', 'noyer', 6);
 
 
-insert into infoArticle values (50.50, 'Guitare électrique 6 cordes noire et blanche joueur débutant',199);
-insert into infoInstrument values (50.50,'bois', 'noir et blanc',120,50.50,30);
-insert into Guitare values (50.50, 'érable', 'electrique', 'noyer', 6);
+insert into infoArticle values (50, 'Guitare électrique 6 cordes noire et blanche joueur débutant',199);
+insert into infoInstrument values (50,'bois', 'noir et blanc',120,50.50,30);
+insert into Guitare values (50, 'érable', 'electrique', 'noyer', 6);
 
 insert into infoArticle values (55, 'Guitare électrique 6 cordes noire et blanche joueur confirmé',499.99);
 insert into infoInstrument values (55,'bois', 'noir et blanc',120,50.50,30);
