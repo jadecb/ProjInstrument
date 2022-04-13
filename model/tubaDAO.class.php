@@ -23,7 +23,7 @@ class TubaDAO{
     // Renvoi un tableau contenant les info de tous les Tubas, le tableau est vide si aucun Tuba n'existe
     function getAllTuba() : array{
         $dao = new TubaDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Tuba a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrPiston FROM infoArticle ia, infoInstrument ii, Tuba a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;
@@ -33,7 +33,7 @@ class TubaDAO{
         $dao = new TubaDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nomArticle.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO Tuba VALUES ('.$a->numArticle.','.$a->nbrPiston.')';
         $sth = $this->db->exec($req);
