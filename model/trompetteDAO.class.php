@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/trompette.class.php'));
 
 // Data Access Object pour Trompette
@@ -32,7 +33,7 @@ class TrompetteDAO{
         $dao = new TrompetteDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nomArticle.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO Trompette VALUES ('.$a->numArticle.','.$a->nbrTouche.')';
         $sth = $this->db->exec($req);

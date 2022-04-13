@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/violon.class.php'));
 
 // Data Access Object pour Violon

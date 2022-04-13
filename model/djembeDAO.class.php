@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__.'/globalDAO.php'));
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/djembe.class.php'));
 
 // Data Access Object pour djembe

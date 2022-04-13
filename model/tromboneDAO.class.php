@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/trombone.class.php'));
 
 // Data Access Object pour Trombone

@@ -3,6 +3,7 @@
 require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
 require_once(__DIR__.'/../model/infoArticle.class.php');
+require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 require_once(__DIR__.'/../model/infoInstrument.class.php');
 
 
@@ -73,7 +74,8 @@ foreach($instrumentAttribut as $nameAttribut => $tab){
         header('Location: ajoutArticle.ctrl.php');
     }
 }
-
+$infoArticleDAO = new InfoArticleDAO();
+$$instrument->__set('numArticle', $infoArticleDAO->getDernierNumArticle()+1);
 var_dump($$instrument);
 $method = 'ajout'.$nomObjetMaj;
 $DAO->$method($$instrument);
