@@ -23,11 +23,21 @@ else{
     header('Location: index.ctrl.php');
 }
 
+$infoArticleDAO = new InfoArticleDAO();
+$numArticle = $infoArticleDAO->getDernierNumArticle()+1;
+if(isset($type) and isset ($fournisseur) and isset($marque) and isset($materiau) and isset($prix) and isset($nomArticle)){
+    $t = $type;
+    $r = $fournisseur;
+    $mar = $marque;
+    $mat = $materiaux;
+    $na = $nomArticle;
+    $p = $prix;
+}
 
 /* *** PARTIE USAGE DU MODELE *** */
 
 // DAO
-$DAO = new AccessoireDAO();
+$DAO = new AccessoireDAO($numArticle, $na, $p, $f, $mat, $mar, $t);
 
 
 // declaration d'une variable contenant l'objet Accessoire
@@ -54,11 +64,7 @@ foreach($accessoireAttribut as $nameAttribut => $tab){
         header('Location: ajoutArticle.ctrl.php');
     }
 }
-$infoArticleDAO = new InfoArticleDAO();
-$accessoire->__set('numArticle', $infoArticleDAO->getDernierNumArticle()+1);
-var_dump($accessoire);
-$method = 'ajout'.$nomObjetMaj;
-$DAO->$method($$instrument);
+
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();

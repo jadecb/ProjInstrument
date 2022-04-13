@@ -4,6 +4,12 @@
 
     <form action="t_ajoutAccessoire.ctrl.php" method="get">
         <fieldset>
+            <!-- partie dynamique sur les articles !-->
+                <label for="nomArticle">Nom</label>
+                <input type="text" name="nomArticle" required/>
+                <label for="prix">Prix</label>
+                <input type="number" name="prix" min="0" step="0.01" required/>
+            <!-- partie statique sur les accessoires !-->
                 <label for="type">Type d'accessoire</label>
                 <input type="text" name="type" required/>
                 <label for="fournisseur">Fournisseur </label>
