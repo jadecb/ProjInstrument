@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/accordeon.class.php'));
 
 // Data Access Object pour Accordeon
@@ -8,17 +9,26 @@ class AccordeonDAO{
 
   // Constructeur chargé d'ouvrir la BD
   function __construct() {
-    $db->getDAO();
+    $this->db = getDAO();
     }
 
     // Renvoi un tableau contenant les info de l'accordeon, le tableau est vide si l'accordeon n'existe pas
     function getAccordeon(int $numArticle) : array{
         $dao = new AccordeonDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon WHERE ia.numArticle='.$numarticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon a WHERE ia.numArticle='.$numarticle.' AND ii.numArticle='.$numArticle.' AND a.numArticle='.$numArticle;;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
     }
+    // Renvoi un tableau contenant les info de tous les accordeons, le tableau est vide si aucun accordeon n'existe
+    function getAllAccordeon() : array{
+        $dao = new AccordeonDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        return $resArray;
+    }
+
     // Ajout un accordeon dans la base
     function ajoutAccordeon(Accordeon $a) : void {
         $dao = new AccordeonDAO(); // instancie l'objet DAO

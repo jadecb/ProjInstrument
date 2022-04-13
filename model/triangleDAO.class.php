@@ -8,7 +8,7 @@ class TriangleDAO{
 
     // Constructeur chargé d'ouvrir la BD
     function __construct() {
-        $db->getDAO();
+        $this->db = getDAO();
     }
 
     // Renvoi un tableau contenant les info de la Triangle, le tableau est vide si la Triangle n'existe pas
@@ -19,6 +19,15 @@ class TriangleDAO{
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
     }
+    // Renvoi un tableau contenant les info de tous les Triangles, le tableau est vide si aucun Triangle n'existe
+    function getAllTriangle() : array{
+        $dao = new TriangleDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Triangle a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        return $resArray;
+    }
+
     // Ajout un Triangle dans la base
     function ajoutTriangle (Triangle $a) : void {
         $dao = new TriangleDAO(); // instancie l'objet DAO

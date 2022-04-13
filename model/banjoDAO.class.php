@@ -7,10 +7,10 @@ require_once(dirname(__FILE__.'/banjo.class.php'));
 class BanjoDAO{
     private $db;
 
-  // Constructeur chargé d'ouvrir la BD
-  function __construct() {
-    $this->db = getDAO();
-}
+    // Constructeur chargé d'ouvrir la BD
+    function __construct() {
+        $this->db = getDAO();
+    }
 
 
     // Renvoi un tableau contenant les info du banjo, le tableau est vide si le banjo n'existe pas
@@ -21,6 +21,15 @@ class BanjoDAO{
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
+    // Renvoi un tableau contenant les info de tous les Banjos, le tableau est vide si aucun Banjo n'existe
+    function getAllBanjo() : array{
+        $dao = new BanjoDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Banjo a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        return $resArray;
+    }
+
 
     // Ajoute un banjo dans la base
     function ajoutBanjo(Banjo $b) : void {

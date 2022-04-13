@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/client.class.php'));
 
 // Data Access Object pour Client
@@ -8,7 +9,7 @@ class ClientDAO{
 
   // Constructeur chargé d'ouvrir la BD
   function __construct() {
-    $db->getDAO();
+    $this->db = getDAO();
 }
 
     function getDernierNumClient() : int {

@@ -8,7 +8,7 @@ class TubaDAO{
 
     // Constructeur chargé d'ouvrir la BD
     function __construct() {
-        $db->getDAO();
+        $this->db = getDAO();
     }
 
     // Renvoi un tableau contenant les info de la Tuba, le tableau est vide si la Tuba n'existe pas
@@ -19,7 +19,14 @@ class TubaDAO{
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
     }
-
+    // Renvoi un tableau contenant les info de tous les Tubas, le tableau est vide si aucun Tuba n'existe
+    function getAllTuba() : array{
+        $dao = new TubaDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Tuba a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        return $resArray;
+    }
     // Ajout un Tuba dans la base
     function ajoutTuba (Tuba $a) : void {
         $dao = new TubaDAO(); // instancie l'objet DAO
@@ -27,7 +34,7 @@ class TubaDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Tuba VALUES ('.$a->numArticle.', '.$a->nbrPiston.')';
+        $req = 'INSERT INTO Tuba VALUES ('.$a->numArticle.','.$a->nbrPiston.')';
         $sth = $this->db->exec($req);
     }
 

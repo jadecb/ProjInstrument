@@ -8,7 +8,7 @@ class ViolonDAO{
 
     // Constructeur chargé d'ouvrir la BD
     function __construct() {
-        $db->getDAO();
+        $this->db = getDAO();
     }
 
     // Renvoi un tableau contenant les info de la Violon, le tableau est vide si la Violon n'existe pas
@@ -17,6 +17,14 @@ class ViolonDAO{
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, v.type, v.typeFinition, v.nbrCordes FROM infoArticle ia, infoInstrument ii, violon v where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND v.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        return $resArray;
+    }
+    // Renvoi un tableau contenant les info de tous les Violons, le tableau est vide si aucun Violon n'existe
+    function getAllViolon() : array{
+        $dao = new ViolonDAO(); // instancie l'objet DAO
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Violon a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;
     }
 
