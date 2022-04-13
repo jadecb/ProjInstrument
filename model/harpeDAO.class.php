@@ -23,7 +23,7 @@ class HarpeDAO{
     // Renvoi un tableau contenant les info de tous les Harpe, le tableau est vide si aucun Harpe n'existe
     function getAllHarpe() : array{
         $dao = new HarpeDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Harpe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.type, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Harpe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;

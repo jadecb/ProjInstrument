@@ -15,7 +15,7 @@ class LuthDAO{
     // Renvoi un tableau contenant les info de la luth, le tableau est vide si la luth n'existe pas
     function getLuth(int $numArticle) : array{
         $dao = new LuthDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, l.nbrCorde FROM infoArticle ia, infoInstrument ii, luth l where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND l.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, l.nbrCordes FROM infoArticle ia, infoInstrument ii, luth l where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND l.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
@@ -23,7 +23,7 @@ class LuthDAO{
     // Renvoi un tableau contenant les info de tous les Luths, le tableau est vide si aucun Luth n'existe
     function getAllLuth() : array{
         $dao = new LuthDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Luth a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Luth a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;
