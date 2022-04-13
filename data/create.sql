@@ -93,20 +93,6 @@ CREATE TABLE Flute(
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
 );
 
-CREATE TABLE fluteABec(
-   numArticle INT,
-   nbrTube INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Flute(numArticle)
-);
-
-CREATE TABLE flutePan(
-   numArticle INT,
-   nbrTube INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Flute(numArticle)
-);
-
 CREATE TABLE Tuba(
    numArticle INT,
    nbrPiston VARCHAR(50),
@@ -208,11 +194,6 @@ CREATE TABLE accessoireArchet(
    FOREIGN KEY(numAccessoire) REFERENCES infoAccessoire(numAccessoire)
 );
 
-CREATE TABLE fluteTraversiere(
-   numArticle INT,
-   nbrBouton INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Flute(numArticle)
-);
+
 
 INSERT INTO Client VALUES (1,"admin","admin","paul@gmail.com","2000-02-02", "12345678", true);
