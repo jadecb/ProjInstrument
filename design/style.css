@@ -130,3 +130,21 @@ input[type=submit]:hover{
     color: var(--dark-blue);
 }
 
+#catalogue {
+	display:flex;
+	flex-wrap:wrap;
+	margin-left:5%;
+	margin-right:5%;
+}
+#catalogue figure{
+	margin:10px;
+}
+#catalogue figure a img {
+	width:200px;
+	height:200px;
+}
+#catalogue figure a figcaption{
+	color:var(--dark-blue);
+	text-transform: uppercase;
+	text-align:center;
+}

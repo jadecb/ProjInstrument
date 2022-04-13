@@ -1,10 +1,10 @@
 <?php require("../view/header.php"); ?>
 
-<main>
+<main id="catalogue">
     <?php foreach ($allInstruments as $instrument): ?>
         <figure>
             <a href="t_catalogue.ctrl.php?instrument=<?=$instrument?>">
-                <img src="../images/catalogue/<?=$instrument?>.jpg" width="100px" height="100px">
+                <img src="../images/catalogue/<?=$instrument?>.jpg">
             
                 <figcaption>
                     <?=$instrument?>
