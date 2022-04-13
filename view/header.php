@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title>Sibémol</title>
   <link rel="stylesheet" type="text/css" href="../design/style.css">
+  <link rel = "icon" href = 
+"../images/icon.png" 
+    type = "image/x-icon">
   <title></title>
 </head>
 <body>
