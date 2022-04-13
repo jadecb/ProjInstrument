@@ -1,11 +1,11 @@
 <?php
 
-$InstrumentsAttributs["banjo"] = array("nbrCordes" => array("type"=>"text", "name"=> "Nombre de cordes"));
+$InstrumentsAttributs["banjo"] = array("nbrCordes" => array("type"=>"number", "name"=> "Nombre de cordes"));
 
 $InstrumentsAttributs["guitare"] = array("materiauxManche" => array("type"=>"text", "name"=> "Matériau du manche"),
                                                     "type" => array("type"=>"text", "name"=> "Type de guitare"),
                                                     "materiauxBoitier" => array("type"=>"text", "name"=> "Matériau du boîtier"),
-                                                    "nbrCordes" => array("type"=>"text", "name"=> "Nombre de cordes"));
+                                                    "nbrCordes" => array("number"=>"text", "name"=> "Nombre de cordes"));
 
 $InstrumentsAttributs["piano"] = array("nbrTouche" => array("type"=>"text", "name"=> "Nombre de touches"),
                                                     "materiauxTouche" => array("type"=>"text", "name"=> "Matériau des touches"));                                         
@@ -29,12 +29,12 @@ $InstrumentsAttributs["accordeon"] = array("nbrBouton" => array("type"=>"number"
 
 $InstrumentsAttributs["violon"] = array("type" => array("type"=>"text", "name"=> "Type de violon"),
                                                     "typeFinition" => array("type"=>"text", "name"=> "Type de finition"),
-                                                "nbrCordes" => array("type"=>"text", "name"=>"Nombre de cordes"));  
+                                                "nbrCordes" => array("type"=>"number", "name"=>"Nombre de cordes"));  
 
 $InstrumentsAttributs["harpe"] = array("type" => array("type"=>"text", "name"=> "Type de harpe"),
-                                                "nbrCordes" => array("type"=>"text", "name"=>"Nombre de cordes"));  
+                                                "nbrCordes" => array("type"=>"number", "name"=>"Nombre de cordes"));  
 
-$InstrumentsAttributs["luth"] = array("nbrCordes" => array("type"=>"text", "name"=>"Nombre de cordes"));  
+$InstrumentsAttributs["luth"] = array("nbrCordes" => array("type"=>"number", "name"=>"Nombre de cordes"));  
 
 $InstrumentsAttributs["flute"] = array("nbrTrou" => array("type"=>"text", "name"=> "Nombre de trous"));
 

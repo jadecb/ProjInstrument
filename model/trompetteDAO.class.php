@@ -7,14 +7,9 @@ class TrompetteDAO{
     private $db;
 
   // Constructeur chargé d'ouvrir la BD
-    function __construct() {
-        try {
-        $database = 'sqlite:'.dirname(__FILE__).'/../data/Sibemol.db';
-        $this->db = new PDO($database, '', '');
-        } catch (PDOExeception $e) {
-            die("Echec lors de la connexion : ".$e->getMessage());
-        }
-    }
+  function __construct() {
+    $db->getDAO();
+}
 
     // Renvoi un tableau contenant les info de la Trompette, le tableau est vide si la Trompette n'existe pas
     function getTrompette(int $numArticle) : array{

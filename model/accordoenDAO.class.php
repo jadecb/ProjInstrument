@@ -7,13 +7,8 @@ class AccordeonDAO{
     private $db;
 
   // Constructeur chargé d'ouvrir la BD
-    function __construct() {
-        try {
-        $database = 'sqlite:'.dirname(__FILE__).'/../data/Sibemol.db';
-        $this->db = new PDO($database, '', '');
-        } catch (PDOExeception $e) {
-            die("Echec lors de la connexion : ".$e->getMessage());
-        }
+  function __construct() {
+    $db->getDAO();
     }
 
     // Renvoi un tableau contenant les info de l'accordeon, le tableau est vide si l'accordeon n'existe pas

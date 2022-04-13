@@ -1,16 +1,14 @@
 <?php
 
-
-
 abstract class infoArticle{
 
-    private int $numArticle;
-    private string $nom;
-    private int $prix;
+    protected int $numArticle;
+    protected string $nomArticle;
+    protected float $prix;
 
-    function __construct(int $numArticle=0, string $nom='', int $prix=0){
+    function __construct(int $numArticle=0, string $nom='', float $prix=0){
         $this->numArticle = $numArticle;
-        $this->nom = $nom;
+        $this->nomArticle = $nom;
         $this->prix = $prix;
     }
     public function __get(string $name){

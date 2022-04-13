@@ -1,5 +1,7 @@
 <?php
 
+require_once(dirname(__FILE__.'/infoInstrument.class.php'));
+
 class Accordeon extends infoInstrument{
     private int $nbrBouton;
 
