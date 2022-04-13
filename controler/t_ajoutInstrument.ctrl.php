@@ -29,13 +29,18 @@ else{
 }
 
 require_once(__DIR__.'/../model/'.$instrument.'.class.php');
+require_once(__DIR__.'/../model/'.$instrument.'DAO.class.php');
 
 /* *** PARTIE USAGE DU MODELE *** */
 
+// DAO
+$DAO = $instrument.'DAO';
+$DAO = new $DAO();
+
 // declaration d'une variable au nom du constructeur de $instrument
-$constructeurObjet = ucfirst($instrument);
+$nomObjetMaj = ucfirst($instrument);
 // declaration d'une variable contenant l'objet $instrument
-$$instrument = new $constructeurObjet();
+$$instrument = new $nomObjetMaj();
 
 // initialisation des attribut "info article" de l'objet $instrument
 require('../model/InfoArticleAttributs.php');
@@ -70,13 +75,12 @@ foreach($instrumentAttribut as $nameAttribut => $tab){
 }
 
 var_dump($$instrument);
+$method = 'ajout'.$nomObjetMaj;
+$DAO->$method($$instrument);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
 
-$view->assign('prenom',$prenom);
-$view->assign('gestionnaire',$gestionnaire);
-$view->assign('allInstruments',$allInstruments);
-$view->display('ajoutInfoArticle.view.php');
+$view->display('index.view.php');
 
 ?>

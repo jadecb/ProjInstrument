@@ -1,5 +1,6 @@
 <?php
 
+require_once('globalDAO.php');
 require_once(dirname(__FILE__.'/banjo.class.php'));
 
 // Data Access Object pour Client
@@ -8,7 +9,7 @@ class BanjoDAO{
 
   // Constructeur chargé d'ouvrir la BD
   function __construct() {
-    $db->getDAO();
+    $this->db = getDAO();
 }
 
 
@@ -23,12 +24,13 @@ class BanjoDAO{
 
     // Ajoute un banjo dans la base
     function ajoutBanjo(Banjo $b) : void {
+        var_dump($b);
         $dao = new BanjoDAO(); // instancie l'objet DAO
-        $req = 'INSERT INTO infoArticle VALUES ('.$b->numArticle.',"'.$b->nom.'",'.$b->prix.')';
+        $req = 'INSERT INTO infoArticle VALUES ('.$b->numArticle.',"'.$b->nomArticle.'",'.$b->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->nom.'",'.$b->largeur.','.$b->longueur.','.$b->hateur.',"'.$b->familleInstrument.'")';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->nomArticle.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Banjo VALUES ('.$b->numArticle.','.$b->nbrCorde.')';
+        $req = 'INSERT INTO Banjo VALUES ('.$b->numArticle.','.$b->nbrCordes.')';
         $sth = $this->db->exec($req);
     }    
 

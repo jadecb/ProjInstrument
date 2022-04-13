@@ -3,7 +3,7 @@
 class Banjo extends infoInstrument{
     private int $nbrCordes;
 
-    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $materiauxPrincipal='', string $couleur='', 
+    function __construct(int $numArticle=8999, string $nom='', int $prix=0, string $materiauxPrincipal='', string $couleur='', 
     int $largeur=0, int $longueur=0, int $hauteur=0, string $familleInstrument='', 
     int $nbrCordes=0)
     
