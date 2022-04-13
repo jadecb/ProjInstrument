@@ -25,6 +25,12 @@ class Flute extends infoInstrument{
         }
     }
 
+    public function __set(string $name, mixed $value): void{
+        if(isset($this->$name)){
+            $this->$name = $value;
+        }
+    }
+    
 }
 
 

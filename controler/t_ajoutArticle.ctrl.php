@@ -27,16 +27,13 @@ else{
 
 /* *** PARTIE USAGE DU MODELE *** */
 if($article == "instrument"){
-    require('../model/InstrumentsAttributs');
-    foreach($InstrumentsAttributs as $key => $value){
-        $allInstruments[] = $key;
-    }
+    require('../model/allInstruments.php');
 }
 
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-
+var_dump($allInstruments);
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 if($article == "instrument"){
@@ -46,7 +43,5 @@ if($article == "instrument"){
 else {
     $view->display('ajoutArticle.view.php');
 }
-
-
 
 ?>

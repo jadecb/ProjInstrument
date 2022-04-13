@@ -27,9 +27,9 @@ else{
 
 /* *** PARTIE USAGE DU MODELE *** */
 
-require('../model/InstrumentsAttributs');
+require('../model/InstrumentsAttributs.php');
 $instrumentAttribut = $InstrumentsAttributs[$instrument];
-
+var_dump($instrumentAttribut);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
