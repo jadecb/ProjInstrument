@@ -20,7 +20,6 @@ CREATE TABLE infoArticle(
 
 CREATE TABLE infoInstrument(
    numArticle INT,
-   familleInstrument VARCHAR(50),
    materiauxPrincipal VARCHAR(50),
    couleur INT,
    largeur INT,
@@ -89,6 +88,7 @@ CREATE TABLE Accordeon(
 CREATE TABLE Flute(
    numArticle INT,
    type VARCHAR(50),
+   nbrTrou INT,
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
 );
@@ -114,7 +114,7 @@ CREATE TABLE Tuba(
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
 );
 
-CREATE TABLE Trombonne(
+CREATE TABLE Trombone(
    numArticle INT,
    type VARCHAR(50),
    PRIMARY KEY(numArticle),
@@ -156,6 +156,21 @@ CREATE TABLE Triangle(
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
 );
+
+CREATE TABLE Harmonica(
+   numArticle INT,
+   nbrTrou INT,
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
+);
+
+CREATE TABLE Saxophone(
+   numArticle INT,
+   nbrTouche INT,
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
+);
+
 
 CREATE TABLE infoAccessoire(
    numAccessoire INT,
