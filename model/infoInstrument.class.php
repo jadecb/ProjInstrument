@@ -15,7 +15,6 @@ abstract class infoInstrument extends infoArticle{
         $this->largeur = $largeur;
         $this->longueur = $longueur;
         $this->hauteur = $hauteur;
-
     }
     public function __get(string $name){
         if(isset($this->$name) && !empty($this->$name)){

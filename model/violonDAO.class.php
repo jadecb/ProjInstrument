@@ -6,27 +6,28 @@ require_once(dirname(__FILE__.'/violon.class.php'));
 class ViolonDAO{
     private $db;
 
-  // Constructeur chargé d'ouvrir la BD
-  function __construct() {
-    $db->getDAO();
-}
+    // Constructeur chargé d'ouvrir la BD
+    function __construct() {
+        $db->getDAO();
+    }
 
     // Renvoi un tableau contenant les info de la Violon, le tableau est vide si la Violon n'existe pas
     function getViolon(int $numArticle) : array{
         $dao = new ViolonDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.familleinstrument, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, v.type, v.typeFinition, v.nbrCorde FROM infoArticle ia, infoInstrument ii, violon v WHERE ia.numArticle='.$numarticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, v.type, v.typeFinition, v.nbrCordes FROM infoArticle ia, infoInstrument ii, violon v where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND v.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_BOTH);
         return $resArray;
     }
+
     // Ajout un Violon dans la base
     function ajoutViolon (Violon $a) : void {
         $dao = new ViolonDAO(); // instancie l'objet DAO
-        $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nom.'",'.$a->prix.')';
+        $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nomArticle.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->familleInstrument.'","'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Violon VALUES ('.$a->numArticle.',"'.$a->type.'", "'.$a->typeFinition.'", '.$a->nbrCorde.')';
+        $req = 'INSERT INTO Violon VALUES ('.$a->numArticle.',"'.$a->type.'", "'.$a->typeFinition.'", '.$a->nbrCordes.')';
         $sth = $this->db->exec($req);
     }
 
