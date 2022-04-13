@@ -82,7 +82,8 @@ $DAO->$method($$instrument);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-
+$view->assign('prenom',$prenom);
+$view->assign('gestionnaire',$gestionnaire);
 $view->display('index.view.php');
 
 ?>
