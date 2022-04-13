@@ -2,7 +2,7 @@
 
 class Harpe extends infoInstrument{
     private String $type;
-    private int $nbrCorde;
+    private int $nbrCordes;
 
     function __construct(int $numArticle=0, string $nom='', int $prix=0, string $materiauxPrincipal='', string $couleur='', 
     int $largeur=0, int $longueur=0, int $hauteur=0, string $type='', int $nbrCorde=0)
@@ -12,7 +12,7 @@ class Harpe extends infoInstrument{
         $couleur, $largeur, $longueur, $hauteur);
 
         $this->type = $type;
-        $this->nbrCorde = $nbrCorde;
+        $this->nbrCordes = $nbrCorde;
 
     }
 

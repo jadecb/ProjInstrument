@@ -17,15 +17,15 @@ class GuitareDAO{
         $dao = new GuitareDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, g.materiauxManche, g.type, g.materiauxBoitier, g.nbrCordes FROM infoArticle ia, infoInstrument ii, guitare g where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND g.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Guitare, le tableau est vide si aucun Guitare n'existe
     function getAllGuitare() : array{
         $dao = new GuitareDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Guitare a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.materiauxManche, a.type, a.materiauxBoitier, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Guitare a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un guitare dans la base
@@ -35,7 +35,7 @@ class GuitareDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO guitare VALUES ('.$a->numArticle.','.$a->materiauxManche.','.$a->type.','.$a->materiauxBoitier.','.$a->nbrCordes.')';
+        $req = 'INSERT INTO guitare VALUES ('.$a->numArticle.',"'.$a->materiauxManche.'","'.$a->type.'","'.$a->materiauxBoitier.'",'.$a->nbrCordes.')';
         $sth = $this->db->exec($req);
     }
 

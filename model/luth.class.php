@@ -1,7 +1,7 @@
 <?php
 
 class Luth extends infoInstrument{
-    private int $nbrCorde;
+    private int $nbrCordes;
 
     function __construct(int $numArticle=0, string $nom='', int $prix=0, string $materiauxPrincipal='', string $couleur='', 
     int $largeur=0, int $longueur=0, int $hauteur=0, int $nbrCorde=0)
@@ -10,7 +10,7 @@ class Luth extends infoInstrument{
         parent::__construct($numArticle, $nom, $prix, $materiauxPrincipal,
         $couleur, $largeur, $longueur, $hauteur);
 
-        $this->nbrCorde = $nbrCorde;
+        $this->nbrCordes = $nbrCorde;
     }
 
     public function __get(string $name){

@@ -17,15 +17,15 @@ class DjembeDAO{
         $dao = new DjembeDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, d.typePeau FROM infoArticle ia, infoInstrument ii, djembe d where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND d.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Djembe, le tableau est vide si aucun Djembe n'existe
     function getAllDjembe() : array{
         $dao = new DjembeDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Djembe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.typePeau FROM infoArticle ia, infoInstrument ii, Djembe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un djembe dans la base
@@ -35,7 +35,7 @@ class DjembeDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO djembe VALUES ('.$a->numArticle.','.$a->typePeau.')';
+        $req = 'INSERT INTO djembe VALUES ('.$a->numArticle.',"'.$a->typePeau.'")';
         $sth = $this->db->exec($req);
     }
 

@@ -42,7 +42,6 @@ $DAO = new $DAO();
 $nomObjetMaj = ucfirst($instrument);
 // declaration d'une variable contenant l'objet $instrument
 $$instrument = new $nomObjetMaj();
-
 // initialisation des attribut "info article" de l'objet $instrument
 require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $name){
@@ -82,7 +81,8 @@ $DAO->$method($$instrument);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-
+$view->assign('prenom',$prenom);
+$view->assign('gestionnaire',$gestionnaire);
 $view->display('index.view.php');
 
 ?>

@@ -17,15 +17,15 @@ class TromboneDAO{
         $dao = new TromboneDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, t.type FROM infoArticle ia, infoInstrument ii, trombone t where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND t.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Trombones, le tableau est vide si aucun Trombone n'existe
     function getAllTrombone() : array{
         $dao = new TromboneDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Trombone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.type FROM infoArticle ia, infoInstrument ii, Trombone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un Trombone dans la base
@@ -33,7 +33,7 @@ class TromboneDAO{
         $dao = new TromboneDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nomArticle.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO Trombone VALUES ('.$a->numArticle.', "'.$a->type.'")';
         $sth = $this->db->exec($req);

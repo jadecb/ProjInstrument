@@ -17,15 +17,15 @@ class PianoDAO{
         $dao = new PianoDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, p.nbrTouche, p.materiauxTouche FROM infoArticle ia, infoInstrument ii, piano p where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND p.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Pianos, le tableau est vide si aucun Piano n'existe
     function getAllPiano() : array{
         $dao = new PianoDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Piano a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrTouche, a.materiauxTouche FROM infoArticle ia, infoInstrument ii, Piano a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un piano dans la base
@@ -35,7 +35,7 @@ class PianoDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO piano VALUES ('.$a->numArticle.','.$a->nbrTouche.','.$a->materiauxTouche.')';
+        $req = 'INSERT INTO piano VALUES ('.$a->numArticle.','.$a->nbrTouche.',"'.$a->materiauxTouche.'")';
         $sth = $this->db->exec($req);
     }
 

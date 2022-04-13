@@ -17,15 +17,15 @@ class ViolonDAO{
         $dao = new ViolonDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, v.type, v.typeFinition, v.nbrCordes FROM infoArticle ia, infoInstrument ii, violon v where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND v.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Violons, le tableau est vide si aucun Violon n'existe
     function getAllViolon() : array{
         $dao = new ViolonDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Violon a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.typeFinition, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Violon a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
 
@@ -34,7 +34,7 @@ class ViolonDAO{
         $dao = new ViolonDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nomArticle.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
+        $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO Violon VALUES ('.$a->numArticle.',"'.$a->type.'", "'.$a->typeFinition.'", '.$a->nbrCordes.')';
         $sth = $this->db->exec($req);

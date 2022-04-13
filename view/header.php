@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <title>Sibémol</title>
   <link rel="stylesheet" type="text/css" href="../design/style.css">
-  <link rel = "icon" href = 
-"../images/icon.png" 
-    type = "image/x-icon">
+  <link rel = "icon" href = "../images/icon.png" type = "image/x-icon">
   <title></title>
 </head>
 <body>
   <header>
+    
       <a id="index" href="index.ctrl.php"><h1>Sibémol</h1></a>
 
       <?php if(isset($prenom)): ?>

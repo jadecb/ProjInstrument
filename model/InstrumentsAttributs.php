@@ -5,14 +5,14 @@ $InstrumentsAttributs["banjo"] = array("nbrCordes" => array("type"=>"number", "n
 $InstrumentsAttributs["guitare"] = array("materiauxManche" => array("type"=>"text", "name"=> "Matériau du manche"),
                                                     "type" => array("type"=>"text", "name"=> "Type de guitare"),
                                                     "materiauxBoitier" => array("type"=>"text", "name"=> "Matériau du boîtier"),
-                                                    "nbrCordes" => array("number"=>"text", "name"=> "Nombre de cordes"));
+                                                    "nbrCordes" => array("type"=>"number", "name"=> "Nombre de cordes"));
 
-$InstrumentsAttributs["piano"] = array("nbrTouche" => array("type"=>"text", "name"=> "Nombre de touches"),
+$InstrumentsAttributs["piano"] = array("nbrTouche" => array("type"=>"number", "name"=> "Nombre de touches"),
                                                     "materiauxTouche" => array("type"=>"text", "name"=> "Matériau des touches"));                                         
 
-$InstrumentsAttributs["tuba"] = array("nbrPiston" => array("type"=>"text", "name"=> "Nombre de pistons"));  
+$InstrumentsAttributs["tuba"] = array("nbrPiston" => array("type"=>"number", "name"=> "Nombre de pistons"));  
 
-$InstrumentsAttributs["trompette"] = array("nbrTouche" => array("type"=>"text", "name"=> "Nombre de touches"));  
+$InstrumentsAttributs["trompette"] = array("nbrTouche" => array("type"=>"number", "name"=> "Nombre de touches"));  
 
 $InstrumentsAttributs["batterie"] = array("type" => array("type"=>"text", "name"=> "Type de batterie"),
                                                     "typePeau" => array("type"=>"text", "name"=> "Type de peau"));  
@@ -36,10 +36,11 @@ $InstrumentsAttributs["harpe"] = array("type" => array("type"=>"text", "name"=> 
 
 $InstrumentsAttributs["luth"] = array("nbrCordes" => array("type"=>"number", "name"=>"Nombre de cordes"));  
 
-$InstrumentsAttributs["flute"] = array("nbrTrou" => array("type"=>"text", "name"=> "Nombre de trous"));
+$InstrumentsAttributs["flute"] = array("nbrTrou" => array("type"=>"number", "name"=> "Nombre de trous"),
+                                        "type" => array("type"=>"text", "name" => "Type de flute"));
 
-$InstrumentsAttributs["harmonica"] = array("nbrTrou" => array("type"=>"text", "name"=> "Nombre de trous"));  
+$InstrumentsAttributs["harmonica"] = array("nbrTrou" => array("type"=>"number", "name"=> "Nombre de trous"));  
 
-$InstrumentsAttributs["saxophone"] = array("nbrTouche" => array("type"=>"text", "name"=> "Nombre de touches"));  
+$InstrumentsAttributs["saxophone"] = array("nbrTouche" => array("type"=>"number", "name"=> "Nombre de touches"));  
 
 ?>
