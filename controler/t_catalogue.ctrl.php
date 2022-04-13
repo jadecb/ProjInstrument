@@ -11,13 +11,6 @@ else{
     header('Location: index.ctrl.php');
 }
 
-if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
-    $gestionnaire = true;
-}
-else{
-    header('Location: index.ctrl.php');
-}
-
 if(isset($_GET['instrument'])){
     $instrument = $_GET['instrument'];
 }

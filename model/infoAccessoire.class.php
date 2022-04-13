@@ -6,7 +6,7 @@ class infoAccessoire extends infoArticle{
     private string $marque;
 
     function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $marque=''){
-        parent::construct($numArticle, $nom, $prix);
+        parent::construct($numArticle, $nomArticle, $prix);
         $this->fournisseur = $fournisseur;
         $this->marque = $marque;
     }
