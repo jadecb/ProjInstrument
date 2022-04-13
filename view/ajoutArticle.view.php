@@ -2,7 +2,7 @@
 
 <main>
 
-    <form action="t_ajoutInfoArticle.ctrl.php" method="get">
+    <form action="t_ajoutArticle.ctrl.php" method="get">
         <fieldset>
             
                 <p>Type d'article : </p>

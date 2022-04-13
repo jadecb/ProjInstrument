@@ -32,7 +32,7 @@
       <?php endif; ?>
 
       <?php if(isset($gestionnaire)): ?>
-        <li><a href="ajoutInfoArticle.ctrl.php">ajout article</a></li>
+        <li><a href="ajoutArticle.ctrl.php">ajout article</a></li>
       <?php endif; ?>
 
       </ul>
