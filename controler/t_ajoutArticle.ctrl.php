@@ -33,7 +33,6 @@ if($article == "instrument"){
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-var_dump($allInstruments);
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 if($article == "instrument"){

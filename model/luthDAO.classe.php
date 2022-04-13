@@ -7,14 +7,9 @@ class LuthDAO{
     private $db;
 
   // Constructeur chargé d'ouvrir la BD
-    function __construct() {
-        try {
-        $database = 'sqlite:'.dirname(__FILE__).'/../data/Sibemol.db';
-        $this->db = new PDO($database, '', '');
-        } catch (PDOExeception $e) {
-            die("Echec lors de la connexion : ".$e->getMessage());
-        }
-    }
+  function __construct() {
+    $db->getDAO();
+}
 
     // Renvoi un tableau contenant les info de la luth, le tableau est vide si la luth n'existe pas
     function getLuth(int $numArticle) : array{

@@ -17,7 +17,7 @@
                 <label for="largeur">Largeur</label>
                 <input type="number" name="largeur" min="0" required/>
                 <label for="longueur">Longueur</label>
-                <input type="number" name="longueur" required/>
+                <input type="number" name="longueur" min="0" required/>
                 <label for="hauteur">Hauteur</label>
                 <input type="number" name="hauteur" min="0" required/>
                 <!-- Partie dynamique dur les attributs de $instrument -->
