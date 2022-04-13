@@ -34,7 +34,7 @@ class AccessoireDAO{
         $dao = new AccessoireDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$a->numArticle.',"'.$a->nom.'",'.$a->prix.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO accessoire VALUES ('.$a->numArticle.',"'.$a->fournisseur.'","'.$a->materiau.'",'.$a->marque.','.$a->type.')';
+        $req = 'INSERT INTO accessoire VALUES ('.$a->numArticle.',"'.$a->fournisseur.'","'.$a->materiau.'","'.$a->marque.'","'.$a->type.'")';
         $sth = $this->db->exec($req);
     }
 

@@ -158,11 +158,12 @@ CREATE TABLE Saxophone(
 );
 
 
-CREATE TABLE infoAccessoire(
+CREATE TABLE Accessoire(
    numArticle INT,
    fournisseur VARCHAR(50),
    materiaux VARCHAR(50),
    marque VARCHAR(50),
+   type VARCHAR(50),
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES Article(numArticle)
 );

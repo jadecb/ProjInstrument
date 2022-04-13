@@ -40,28 +40,10 @@ $accessoireDAO = new AccessoireDAO();
 
 // declaration d'une variable contenant l'objet Accessoire
 $accessoire = new Accessoire($numArticle, $na, $p, $r, $mat, $mar, $t);
-// initialisation des attribut "info article" de l'objet Accessoire
-require('../model/InfoArticleAttributs.php');
-foreach($InfoArticleAttributs as $name){
-    if(isset($_GET[$name])){
-        $accessoire->__set($name,$_GET[$name]);
-    }
-    else{
-        header('Location: ajoutArticle.ctrl.php');
-    }
-}
+$accessoireDAO->ajoutAccessoire($accessoire);
 
-// initialisation des attribut propre à l'objet $accessoire
-require('../model/AccessoireAttributs.php');
-$accessoireAttribut = $AccessoireAttributs[$accessoire];
-foreach($accessoireAttribut as $nameAttribut => $tab){
-    if(isset($_GET[$nameAttribut])){
-        $accessoire->__set($nameAttribut,$_GET[$nameAttribut]);
-    }
-    else{
-        header('Location: ajoutArticle.ctrl.php');
-    }
-}
+
+
 
 /* *** GESTION DE LA VUE *** */
 
