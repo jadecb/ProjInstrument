@@ -7,15 +7,14 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
-else{
-    header('Location: index.ctrl.php');
-}
 
+// Récupération du type d'instrumment voulant etre affiché
+// si non trouvé renvoi au controleur précédent
 if(isset($_GET['instrument'])){
     $instrument = $_GET['instrument'];
 }
 else{
-    header('Location: choixAjoutInstrument.ctrl.php');
+    header('Location: catalogue.ctrl.php');
 }
 
 /* *** PARTIE USAGE DU MODELE *** */

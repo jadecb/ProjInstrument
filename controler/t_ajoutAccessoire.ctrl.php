@@ -9,6 +9,7 @@ require_once(__DIR__.'/../model/accessoireDAO.class.php');
 
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
+
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
@@ -16,6 +17,7 @@ else{
     header('Location: index.ctrl.php');
 }
 
+// Vérification que le client est bien gestionnaire sinon renvoi sur index
 if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
     $gestionnaire = true;
 }
@@ -23,6 +25,7 @@ else{
     header('Location: index.ctrl.php');
 }
 
+// vérification que toutes les infos sur l'accessoire à ajouter sont présentes
 if(isset($_GET['type']) && isset($_GET['fournisseur']) && isset($_GET['marque']) && isset($_GET['materiaux']) && isset($_GET['prix']) && isset($_GET['nomArticle'])){
     $t = $_GET['type'];
     $r = $_GET['fournisseur'];
@@ -33,17 +36,17 @@ if(isset($_GET['type']) && isset($_GET['fournisseur']) && isset($_GET['marque'])
 }
 
 /* *** PARTIE USAGE DU MODELE *** */
-$infoArticleDAO = new InfoArticleDAO();
-$numArticle = $infoArticleDAO->getDernierNumArticle()+1;
+
 // DAO
+$infoArticleDAO = new InfoArticleDAO();
 $accessoireDAO = new AccessoireDAO();
 
-// declaration d'une variable contenant l'objet Accessoire
+// Instanciation de l'accessoire à ajouter
+$numArticle = $infoArticleDAO->getDernierNumArticle()+1;
 $accessoire = new Accessoire($numArticle, $na, $p, $r, $mat, $mar, $t);
+
+// Requete de l'ajout de l'accessoire dans la DB
 $accessoireDAO->ajoutAccessoire($accessoire);
-
-
-
 
 /* *** GESTION DE LA VUE *** */
 

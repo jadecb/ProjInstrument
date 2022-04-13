@@ -15,6 +15,7 @@ else{
     header('Location: index.ctrl.php');
 }
 
+// Vérification que le client est bien gestionnaire sinon renvoi sur index
 if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
     $gestionnaire = true;
 }
@@ -22,6 +23,7 @@ else{
     header('Location: index.ctrl.php');
 }
 
+// Vérification que le type d'instrument est bien récupéré, sinon renvoi sur le controleur d'avant
 if(isset($_GET['instrument'])){
     $instrument = $_GET['instrument'];
 }
@@ -29,20 +31,26 @@ else{
     header('Location: t_ajoutArticle.ctrl.php');
 }
 
+// ajout des class et classDAO de l'instrument choisi
 require_once(__DIR__.'/../model/'.$instrument.'.class.php');
 require_once(__DIR__.'/../model/'.$instrument.'DAO.class.php');
 
 /* *** PARTIE USAGE DU MODELE *** */
 
 // DAO
+$infoArticleDAO = new InfoArticleDAO();
 $DAO = $instrument.'DAO';
 $DAO = new $DAO();
 
-// declaration d'une variable au nom du constructeur de $instrument
+// declaration d'une variable du nom de $instrument avec une majuscule en première lettre
 $nomObjetMaj = ucfirst($instrument);
-// declaration d'une variable contenant l'objet $instrument
+
+// instanciation du type d'instrument choisi dans une variable de nom $instrument
 $$instrument = new $nomObjetMaj();
-// initialisation des attribut "info article" de l'objet $instrument
+
+// Récupération des attributs "info article" de l'objet $instrument dans la query string
+// puis initialisation de l'attribut associé de l'objet $instrument
+// si un est manquant renvoi au controleur d'avant
 require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $name){
     if(isset($_GET[$name])){
@@ -52,7 +60,10 @@ foreach($InfoArticleAttributs as $name){
         header('Location: ajoutArticle.ctrl.php');
     }
 }
-// initialisation des attribut "info instrument" de l'objet $instrument
+
+// Récupération des attributs "info instrument" de l'objet $instrument dans la query string
+// puis initialisation de l'attribut associé de l'objet $instrument
+// si un est manquant renvoi au controleur d'avant
 require('../model/InfoInstrumentAttributs.php');
 foreach($InfoInstrumentAttributs as $name){
     if(isset($_GET[$name])){
@@ -62,7 +73,10 @@ foreach($InfoInstrumentAttributs as $name){
         header('Location: ajoutArticle.ctrl.php');
     }
 }
-// initialisation des attribut propre à l'objet $instrument
+
+// Récupération des attributs propres à l'objet $instrument dans la query string
+// puis initialisation de l'attribut associé de l'objet $instrument
+// si un est manquant renvoi au controleur d'avant
 require('../model/InstrumentsAttributs.php');
 $instrumentAttribut = $InstrumentsAttributs[$instrument];
 foreach($instrumentAttribut as $nameAttribut => $tab){
@@ -73,11 +87,14 @@ foreach($instrumentAttribut as $nameAttribut => $tab){
         header('Location: ajoutArticle.ctrl.php');
     }
 }
-$infoArticleDAO = new InfoArticleDAO();
+
+// Attribution du numArticle
 $$instrument->__set('numArticle', $infoArticleDAO->getDernierNumArticle()+1);
-var_dump($$instrument);
+
+// Appel à la DAO pour ajouter le $instrument
 $method = 'ajout'.$nomObjetMaj;
 $DAO->$method($$instrument);
+
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();

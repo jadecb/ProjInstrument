@@ -7,19 +7,25 @@ require_once('../model/clientDAO.class.php');
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
 
-if(isset($_GET['mail'])){
+// Récupération de la query string
+// si mail ou mdp manquant renvoi au controleur precedent
+if(isset($_GET['mail']) && isset($_GET['mdp'])){
     $mail = $_GET['mail'];
-}
-
-if(isset($_GET['mdp'])){
     $mdp = $_GET['mdp'];
+}
+else{
+    header('Location: connect.ctrl.php');
 }
 
 /* *** PARTIE USAGE DU MODELE *** */
 
+// DAO
 $clientDAO = new ClientDAO();
 
+// Appel à la DAO pour récupérer le client
 $infoClient = $clientDAO->getClient($mail, $mdp);
+
+// Si le client existe stockage de ses informations dans $_SESSION
 if(!empty($infoClient)){
     foreach($infoClient[0] as $key => $value){
         $_SESSION[$key] = $value;
