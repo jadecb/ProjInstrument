@@ -10,7 +10,7 @@ class Luth extends infoInstrument{
         parent::__construct($numArticle, $nom, $prix, $materiauxPrincipal,
         $couleur, $largeur, $longueur, $hauteur);
 
-        $this->nbrCorde = $nbrCorde;
+        $this->nbrCordes = $nbrCorde;
     }
 
     public function __get(string $name){

@@ -34,6 +34,7 @@ require_once(__DIR__.'/../model/'.$instrument.'DAO.class.php');
 
 /* *** PARTIE USAGE DU MODELE *** */
 
+var_dump($instrument);
 // DAO
 $DAO = $instrument.'DAO';
 $DAO = new $DAO();
@@ -42,7 +43,6 @@ $DAO = new $DAO();
 $nomObjetMaj = ucfirst($instrument);
 // declaration d'une variable contenant l'objet $instrument
 $$instrument = new $nomObjetMaj();
-
 // initialisation des attribut "info article" de l'objet $instrument
 require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $name){

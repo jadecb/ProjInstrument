@@ -35,7 +35,7 @@ class PianoDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO piano VALUES ('.$a->numArticle.','.$a->nbrTouche.','.$a->materiauxTouche.')';
+        $req = 'INSERT INTO piano VALUES ('.$a->numArticle.','.$a->nbrTouche.',"'.$a->materiauxTouche.'")';
         $sth = $this->db->exec($req);
     }
 

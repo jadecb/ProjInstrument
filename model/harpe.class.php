@@ -12,7 +12,7 @@ class Harpe extends infoInstrument{
         $couleur, $largeur, $longueur, $hauteur);
 
         $this->type = $type;
-        $this->nbrCorde = $nbrCorde;
+        $this->nbrCordes = $nbrCorde;
 
     }
 

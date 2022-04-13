@@ -35,7 +35,7 @@ class GuitareDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO guitare VALUES ('.$a->numArticle.','.$a->materiauxManche.','.$a->type.','.$a->materiauxBoitier.','.$a->nbrCordes.')';
+        $req = 'INSERT INTO guitare VALUES ('.$a->numArticle.',"'.$a->materiauxManche.'","'.$a->type.'","'.$a->materiauxBoitier.'",'.$a->nbrCordes.')';
         $sth = $this->db->exec($req);
     }
 

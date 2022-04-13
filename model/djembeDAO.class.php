@@ -35,7 +35,7 @@ class DjembeDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO djembe VALUES ('.$a->numArticle.','.$a->typePeau.')';
+        $req = 'INSERT INTO djembe VALUES ('.$a->numArticle.',"'.$a->typePeau.'")';
         $sth = $this->db->exec($req);
     }
 

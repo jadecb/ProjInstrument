@@ -35,7 +35,7 @@ class BatterieDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$a->numArticle.',"'.$a->materiauxPrincipal.'","'.$a->couleur.'",'.$a->largeur.','.$a->longueur.','.$a->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Batterie VALUES ('.$a->numArticle.','.$a->type.','.$a->typePeau.')';
+        $req = 'INSERT INTO Batterie VALUES ('.$a->numArticle.',"'.$a->type.'","'.$a->typePeau.'")';
         $sth = $this->db->exec($req);
     }
 

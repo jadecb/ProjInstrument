@@ -1,6 +1,6 @@
 <?php
 
-class Violon extends infoInstrument{
+class Guitare extends infoInstrument{
     private string $type;
     private string $materiauxBoitier;
     private string $materiauxManche;
