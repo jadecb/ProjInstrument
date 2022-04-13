@@ -23,7 +23,7 @@ class TrompetteDAO{
     // Renvoi un tableau contenant les info de tous les Trompettes, le tableau est vide si aucun Trompette n'existe
     function getAllTrompette() : array{
         $dao = new TrompetteDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Trompette a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrTouche FROM infoArticle ia, infoInstrument ii, Trompette a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;
