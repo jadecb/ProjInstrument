@@ -17,7 +17,7 @@ class BatterieDAO{
         $dao = new BatterieDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, b.type, b.typePeau FROM infoArticle ia, infoInstrument ii, Batterie b where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND b.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Batterie, le tableau est vide si aucun Batterie n'existe
@@ -25,7 +25,7 @@ class BatterieDAO{
         $dao = new BatterieDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.type, a.typePeau FROM infoArticle ia, infoInstrument ii, Batterie a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un Batterie dans la base

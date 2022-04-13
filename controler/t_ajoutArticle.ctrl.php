@@ -40,7 +40,7 @@ if($article == "instrument"){
     $view->display('choixAjoutInstrument.view.php');
 }
 else {
-    $view->display('ajoutArticle.view.php');
+    $view->display('ajoutAccessoire.view.php');
 }
 
 ?>

@@ -1,8 +1,30 @@
 <?php
 
-// Descritpion d'un accessoire
-class Accessoire{
+class Accessoire extends infoArticle{
+
+    private string $fournisseur;
+    private string $materiau;
+    private string $marque;
+    private string $type;
+
+    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $materiau='', string $marque='',string $type=''){
+        parent::construct($numArticle, $nom, $prix);
+        $this->fournisseur = $fournisseur;
+        $this->materiau = $materiau;
+        $this->marque = $marque;
+        $this->type = $type;
+    }
+    public function __get(string $name){
+        if(isset($this->$name) && !empty($this->$name)){
+            return $this->$name;
+        }
+        else{
+            return NULL;
+        }
+    }
 
 }
+
+
 
 ?>

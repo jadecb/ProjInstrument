@@ -17,7 +17,7 @@ class MaracasDAO{
         $dao = new MaracasDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, m.typeCalebasse FROM infoArticle ia, infoInstrument ii, maracas m where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND m.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Maracass, le tableau est vide si aucun Maracas n'existe
@@ -25,7 +25,7 @@ class MaracasDAO{
         $dao = new MaracasDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.typeCalebasse FROM infoArticle ia, infoInstrument ii, Maracas a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un maracas dans la base

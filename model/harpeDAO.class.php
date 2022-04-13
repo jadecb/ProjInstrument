@@ -17,7 +17,7 @@ class HarpeDAO{
         $dao = new HarpeDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, h.type, h.nbrCordes FROM infoArticle ia, infoInstrument ii, harpe h where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND h.numArticle='.$numArticle;
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_BOTH);
+        $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les Harpe, le tableau est vide si aucun Harpe n'existe
@@ -25,7 +25,7 @@ class HarpeDAO{
         $dao = new HarpeDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.type, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Harpe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
+        $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
     // Ajout un Harpe dans la base
