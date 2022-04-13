@@ -25,23 +25,22 @@ else{
 
 $infoArticleDAO = new InfoArticleDAO();
 $numArticle = $infoArticleDAO->getDernierNumArticle()+1;
-if(isset($type) and isset ($fournisseur) and isset($marque) and isset($materiau) and isset($prix) and isset($nomArticle)){
-    $t = $type;
-    $r = $fournisseur;
-    $mar = $marque;
-    $mat = $materiaux;
-    $na = $nomArticle;
-    $p = $prix;
+if(isset($_GET['type']) and isset ($_GET['fournisseur']) and isset($_GET['marque']) and isset($_GET['materiaux']) and isset($_GET['prix']) and isset($_GET['nomArticle'])){
+    $t = $_GET['type'];
+    $r = $_GET['fournisseur'];
+    $mar = $_GET['marque'];
+    $mat = $_GET['materiaux'];
+    $p = $_GET['prix'];
+    $na = $_GET['nomArticle'];
 }
 
 /* *** PARTIE USAGE DU MODELE *** */
 
 // DAO
-$DAO = new AccessoireDAO($numArticle, $na, $p, $f, $mat, $mar, $t);
-
+$DAO = new AccessoireDAO();
 
 // declaration d'une variable contenant l'objet Accessoire
-$accessoire = new Accessoire();
+$accessoire = new Accessoire($numArticle, $na, $p, $r, $mat, $mar, $t);
 // initialisation des attribut "info article" de l'objet Accessoire
 require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $name){
