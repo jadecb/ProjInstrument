@@ -5,6 +5,7 @@ require_once(__DIR__.'/../framework/view.fw.php');
 require_once(__DIR__.'/../model/infoArticle.class.php');
 require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 require_once(__DIR__.'/../model/accessoire.class.php');
+require_once(__DIR__.'/../model/accessoireDAO.class.php');
 
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
@@ -22,8 +23,6 @@ else{
     header('Location: index.ctrl.php');
 }
 
-require_once(__DIR__.'/../model/accessoire.class.php');
-require_once(__DIR__.'/../model/accessoireDAO.class.php');
 
 /* *** PARTIE USAGE DU MODELE *** */
 
