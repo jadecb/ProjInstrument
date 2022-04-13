@@ -39,7 +39,7 @@ class FluteDAO{
         $sth = $this->db->exec($req);
         $req = 'INSERT INTO infoInstrument VALUES ('.$b->numArticle.',"'.$b->materiauxPrincipal.'","'.$b->couleur.'",'.$b->largeur.','.$b->longueur.','.$b->hauteur.')';
         $sth = $this->db->exec($req);
-        $req = 'INSERT INTO Flute VALUES ('.$b->numArticle.','.$b->type.','.$b->nbrTrou.')';
+        $req = 'INSERT INTO Flute VALUES ('.$b->numArticle.',"'.$b->type.'",'.$b->nbrTrou.')';
         $sth = $this->db->exec($req);
     }    
 

@@ -36,7 +36,8 @@ $InstrumentsAttributs["harpe"] = array("type" => array("type"=>"text", "name"=> 
 
 $InstrumentsAttributs["luth"] = array("nbrCordes" => array("type"=>"number", "name"=>"Nombre de cordes"));  
 
-$InstrumentsAttributs["flute"] = array("nbrTrou" => array("type"=>"number", "name"=> "Nombre de trous"));
+$InstrumentsAttributs["flute"] = array("nbrTrou" => array("type"=>"number", "name"=> "Nombre de trous"),
+                                        "type" => array("type"=>"text", "name" => "Type de flute"));
 
 $InstrumentsAttributs["harmonica"] = array("nbrTrou" => array("type"=>"number", "name"=> "Nombre de trous"));  
 
