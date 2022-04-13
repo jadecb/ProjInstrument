@@ -159,39 +159,37 @@ CREATE TABLE Saxophone(
 
 
 CREATE TABLE infoAccessoire(
-   numAccessoire INT,
+   numArticle INT,
    fournisseur VARCHAR(50),
    materiaux VARCHAR(50),
    marque VARCHAR(50),
-   numArticle INT NOT NULL,
-   PRIMARY KEY(numAccessoire),
-   UNIQUE(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES infoArticle(numArticle)
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES Article(numArticle)
 );
 
 CREATE TABLE accessoireCorde(
-   numAccessoire INT,
-   PRIMARY KEY(numAccessoire),
-   FOREIGN KEY(numAccessoire) REFERENCES infoAccessoire(numAccessoire)
+   numArticle INT,
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
 );
 
 CREATE TABLE accessoireMediator(
-   numAccessoire INT,
-   PRIMARY KEY(numAccessoire),
-   FOREIGN KEY(numAccessoire) REFERENCES infoAccessoire(numAccessoire)
+   numArticle INT,
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
 );
 
 CREATE TABLE accessoireMetronome(
-   numAccessoire INT,
-   PRIMARY KEY(numAccessoire),
-   FOREIGN KEY(numAccessoire) REFERENCES infoAccessoire(numAccessoire)
+   numArticle INT,
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
 );
 
 CREATE TABLE accessoireArchet(
-   numAccessoire INT,
+   numArticle INT,
    materiauxPoils VARCHAR(50),
-   PRIMARY KEY(numAccessoire),
-   FOREIGN KEY(numAccessoire) REFERENCES infoAccessoire(numAccessoire)
+   PRIMARY KEY(numArticle),
+   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
 );
 
 
