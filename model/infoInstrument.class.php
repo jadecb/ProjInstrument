@@ -1,6 +1,7 @@
 <?php
 
 abstract class infoInstrument extends infoArticle{
+    
     protected string $materiauxPrincipal;
     protected string $couleur;
     protected int $largeur;

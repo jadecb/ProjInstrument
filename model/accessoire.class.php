@@ -7,8 +7,9 @@ class Accessoire extends infoArticle{
     private string $marque;
     private string $type;
 
-    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $materiau='', string $marque='',string $type=''){
-        parent::construct($numArticle, $nom, $prix);
+    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $materiau='',
+    string $marque='',string $type=''){
+        parent::__construct($numArticle, $nom, $prix);
         $this->fournisseur = $fournisseur;
         $this->materiau = $materiau;
         $this->marque = $marque;
@@ -23,8 +24,12 @@ class Accessoire extends infoArticle{
         }
     }
 
+    public function __set(string $name, mixed $value): void{
+        if(isset($this->$name)){
+            $this->$name = $value;
+        }
+    }
+
 }
-
-
 
 ?>

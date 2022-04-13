@@ -25,7 +25,7 @@
         <li><a href="connect.ctrl.php">Se connecter</a></li>
       <?php endif; ?>
 
-      <li><a href="#">Catalogue</a></li>
+      <li><a href="catalogue.ctrl.php">Catalogue</a></li>
       <li><a href="#">Panier</a></li>
 
       <?php if(isset($prenom)): ?>

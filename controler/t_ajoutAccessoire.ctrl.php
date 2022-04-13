@@ -23,9 +23,7 @@ else{
     header('Location: index.ctrl.php');
 }
 
-$infoArticleDAO = new InfoArticleDAO();
-$numArticle = $infoArticleDAO->getDernierNumArticle()+1;
-if(isset($_GET['type']) and isset ($_GET['fournisseur']) and isset($_GET['marque']) and isset($_GET['materiaux']) and isset($_GET['prix']) and isset($_GET['nomArticle'])){
+if(isset($_GET['type']) && isset($_GET['fournisseur']) && isset($_GET['marque']) && isset($_GET['materiaux']) && isset($_GET['prix']) && isset($_GET['nomArticle'])){
     $t = $_GET['type'];
     $r = $_GET['fournisseur'];
     $mar = $_GET['marque'];
@@ -35,9 +33,10 @@ if(isset($_GET['type']) and isset ($_GET['fournisseur']) and isset($_GET['marque
 }
 
 /* *** PARTIE USAGE DU MODELE *** */
-
+$infoArticleDAO = new InfoArticleDAO();
+$numArticle = $infoArticleDAO->getDernierNumArticle()+1;
 // DAO
-$DAO = new AccessoireDAO();
+$accessoireDAO = new AccessoireDAO();
 
 // declaration d'une variable contenant l'objet Accessoire
 $accessoire = new Accessoire($numArticle, $na, $p, $r, $mat, $mar, $t);
