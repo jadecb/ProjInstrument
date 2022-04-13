@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
@@ -17,7 +17,7 @@ require_once('../model/allInstruments.php');
 /* *** GESTION DE LA VUE *** */
 
 $view= new View();
-$View->assign('allInstruments',$allInstruments)
+$view->assign('allInstruments',$allInstruments);
 
 $view->display('catalogue.view.php');
 
