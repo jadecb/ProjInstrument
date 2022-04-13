@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 750 500" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<?xml-stylesheet type="text/css" href="./../handson.css" ?> 
+
+
+
+<!-- draw sketch -->
+
+<g id="logo" transform="scale(3.5) translate(-120,-90)">
+<g transform="rotate(180, 150, 125)" >
+     <path d="M 0 100
+           A 75 50 0 0 1 150 100
+           L 0 100
+           Z" 
+        fill="white" />
+  </g>
+
+<!-- baguettes -->
+
+<path id="baguette" stroke-width="0,5"
+	d="M 233,150 L 235,90 Q 230,85 235,80 Q 240,85 235,90 L 238,150 L 233,150"/>
+
+<path fill="#131921" stroke="#131921" stroke-width="1"
+	d="M 233,150 L 235,90 Q 230,85 235,80 Q 240,85 235,90 L 238,150 L 233,150"/>
+
+<use xlink:href="#baguette" fill="#FEBD69" stroke="FEBD69" transform="translate(-235.5,0) skewX(20) translate(180,0)"/>
+<use xlink:href="#baguette" fill="#FEBD69" stroke="FEBD69" transform="translate(-235.5,0) skewX(-20) translate(270,0)"/>
+
+<!-- guitare -->
+
+<g id="guitare">
+<path stroke-width="1"
+	d="M 170,150 L 171,90 L 167,85 Q 170,75 167,65 L 175,60 L 182,65 Q 179,75 183,85 L 179,90 L 180,150 L 170,150"/>
+
+<line x1="170" x2="180" y1="140" y2="140" stroke="white" stroke-width="0.5"/>
+<line x1="170" x2="180" y1="130" y2="130" stroke="white" stroke-width="0.5"/>
+<line x1="170" x2="180" y1="120" y2="120" stroke="white" stroke-width="0.5"/>
+<circle cx="175" cy="115" r="1" fill="white"/>
+<line x1="170" x2="180" y1="110" y2="110" stroke="white" stroke-width="0.5"/>
+<line x1="170" x2="180" y1="100" y2="100" stroke="white" stroke-width="0.5"/>
+<line x1="170" x2="180" y1="90" y2="90" stroke="white" stroke-width="1"/>
+<circle cx="172" cy="70" r="1" fill="white"/>
+<circle cx="172" cy="80" r="1" fill="white"/>
+<circle cx="178" cy="70" r="1" fill="white"/>
+<circle cx="178" cy="80" r="1" fill="white"/>
+
+<circle cx="167" cy="70" r="1" fill="brown"/>
+<circle cx="167" cy="80" r="1" fill="brown"/>
+<circle cx="182" cy="70" r="1" fill="brown"/>
+<circle cx="182.5" cy="80" r="1" fill="brown"/>
+
+</g>
+
+<use xlink:href="#guitare" transform="translate(100,0)"/>
+
+
+<text x="192"  y="175"
+	style="font-family: sans-serif;
+			font-size  : 50;
+			stroke     : #000000;
+			fill       : #000000;">
+Sibémol
+</text>
+</g>
+
+<!-- end draw sketch -->
+</svg>
