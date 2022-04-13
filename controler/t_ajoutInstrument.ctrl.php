@@ -27,18 +27,8 @@ else{
 
 require_once(__DIR__.'/../model/'.$instrument.'.class.php');
 
-require('../model/InfoArticleAttributs');
+require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $value){
-    if(isset($_GET[$value])){
-        $$value = $_GET[$value];
-    }
-    else{
-        header('Location: choixAjoutInstrument.ctrl.php');
-    }
-}
-
-require('../model/InfoInstrumentsAttributs');
-foreach($InfoInstrumentsAttributs as $value){
     if(isset($_GET[$value])){
         $$value = $_GET[$value];
     }
@@ -49,10 +39,22 @@ foreach($InfoInstrumentsAttributs as $value){
 
 /* *** PARTIE USAGE DU MODELE *** */
 
-$$instrument = ucfirst($instrument)();
+// declaration d'une variable au nom du constructeur de $instrument
+$constructeurObjet = ucfirst($instrument);
+// declaration d'une variable contenant l'objet $instrument
+$instrument = new $constructeurObjet();
 
-
-$instrument = ucfirst($instrument); // mise en majuscule de la première lettre de l'instrument
+// recuperation des attributs de l'instrument sélectionné
+// et création d'une variable pour chaque attribut
+require('../model/InfoInstrumentsAttributs');
+foreach($InfoInstrumentsAttributs as $value){
+    if(isset($_GET[$value])){
+        $$value = $_GET[$value];
+    }
+    else{
+        header('Location: choixAjoutInstrument.ctrl.php');
+    }
+}
 
 /* *** GESTION DE LA VUE *** */
 
