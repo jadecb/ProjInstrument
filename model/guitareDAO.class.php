@@ -23,7 +23,7 @@ class GuitareDAO{
     // Renvoi un tableau contenant les info de tous les Guitare, le tableau est vide si aucun Guitare n'existe
     function getAllGuitare() : array{
         $dao = new GuitareDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Guitare a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.materiauxManche, a.type, a.materiauxBoitier, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Guitare a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETH_ASSOC);
         return $resArray;
