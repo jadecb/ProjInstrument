@@ -19,18 +19,20 @@ else{
 
 /* *** PARTIE USAGE DU MODELE *** */
 
-require('../model/InstrumentsAttributs.php');
-$instrumentAttribut = $InstrumentsAttributs[$instrument];
+// DAO
+$DAO = $instrument.'DAO';
+$DAO = new $DAO();
+
+$method = 'getAll'.$instrument;
+$allInstrument = $DAO->$method();
 
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-
-
-$view->assign('prenom',$prenom);
-$view->assign('gestionnaire',$gestionnaire);
-$view->assign('instrument',$instrument);
-$view->assign('instrumentAttribut',$instrumentAttribut);
-$view->display('ajoutInstrument.view.php');
+if(isset($_SESSION['prenom'])){
+    $view->assign('prenom',$prenom);
+}
+$view->assign('allInstrument',$allInstrument);
+$view->display('afficheInstrument.view.php');
 
 ?>
