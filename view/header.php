@@ -38,8 +38,9 @@
       <?php endif; ?>
 
       <li><a href="catalogue.ctrl.php">Catalogue</a></li>
+      <?php if(isset($prenom)): ?>
       <li><a href="#">Panier</a></li>
-
+      <?php endif; ?>
       <?php if(isset($prenom)): ?>
         <li><a href="#">Historique</a></li>
         <li><a href="deconnect.ctrl.php">Se déconnecter</a></li>

@@ -5,6 +5,8 @@ require_once(__DIR__.'/../framework/view.fw.php');
 require_once(__DIR__.'/../model/infoArticle.class.php');
 require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 require_once(__DIR__.'/../model/infoInstrument.class.php');
+require_once('../model/allInstruments.php');
+
 
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
@@ -100,6 +102,7 @@ $DAO->$method($$instrument);
 $view = new View();
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
+$view->assign('allInstrument',$allInstrument);
 $view->display('index.view.php');
 
 ?>
