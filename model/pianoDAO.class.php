@@ -15,7 +15,7 @@ class PianoDAO{
     // Renvoi un tableau contenant les info de la piano, le tableau est vide si la piano n'existe pas
     function getPiano(int $numArticle) : array{
         $dao = new PianoDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, p.nbrTouche, p.materiauxTouche FROM infoArticle ia, infoInstrument ii, piano p where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND p.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, p.nbrTouche, p.materiauxTouche FROM infoArticle ia, infoInstrument ii, piano p where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND p.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
@@ -23,7 +23,7 @@ class PianoDAO{
     // Renvoi un tableau contenant les info de tous les Pianos, le tableau est vide si aucun Piano n'existe
     function getAllPiano() : array{
         $dao = new PianoDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrTouche, a.materiauxTouche FROM infoArticle ia, infoInstrument ii, Piano a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrTouche, a.materiauxTouche FROM infoArticle ia, infoInstrument ii, Piano a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

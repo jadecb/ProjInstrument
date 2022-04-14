@@ -23,7 +23,7 @@ class TubaDAO{
     // Renvoi un tableau contenant les info de tous les Tubas, le tableau est vide si aucun Tuba n'existe
     function getAllTuba() : array{
         $dao = new TubaDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrPiston FROM infoArticle ia, infoInstrument ii, Tuba a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrPiston FROM infoArticle ia, infoInstrument ii, Tuba a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

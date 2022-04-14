@@ -4,7 +4,7 @@
     <?php foreach ($allArticles as $key => $tab): ?>
         <?php foreach ($tab as $tabInfosArticle): ?>
             <div>
-                <a href="#">
+                <a href="afficheArticle.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>">
                     <img src="../images/<?=$tabInfosArticle['numArticle']?>.jpg">
                     <div>
                         <h2><?=$tabInfosArticle['nom']?></h2>
@@ -15,6 +15,5 @@
         <?php endforeach; ?>
     <?php endforeach; ?>
 </main>
-
 
 <?php require("../view/footer.php"); ?>

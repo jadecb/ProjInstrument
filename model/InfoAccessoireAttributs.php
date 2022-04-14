@@ -1,5 +1,5 @@
 <?php
 
-$InfoInstrumentAttributs = array("fournisseur", "materiau", "marque", "type");
+$InfoInstrumentAttributs = array("fournisseur", "materiaux", "marque", "type");
 
 ?>

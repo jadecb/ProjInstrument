@@ -23,7 +23,7 @@ class SaxophoneDAO{
     // Renvoi un tableau contenant les info de tous les Saxophones, le tableau est vide si aucun Saxophone n'existe
     function getAllSaxophone() : array{
         $dao = new SaxophoneDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrTouche FROM infoArticle ia, infoInstrument ii, Saxophone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrTouche FROM infoArticle ia, infoInstrument ii, Saxophone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

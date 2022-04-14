@@ -31,5 +31,12 @@ $view = new View();
 if(isset($prenom)){
     $view->assign('prenom',$prenom);
 }
-$view->assign('allArticles',$allArticles);
-$view->display('resultatRecherche.view.php');
+if($allArticles!= null){
+    $view->assign('allArticles',$allArticles);
+    $view->display('resultatRecherche.view.php');
+}
+else{
+    require_once('../model/allInstruments.php');
+    $view->assign('allInstruments',$allInstruments);
+    $view->display('index.view.php');
+}
