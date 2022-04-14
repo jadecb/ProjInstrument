@@ -1,16 +1,16 @@
 <?php require("../view/header.php"); ?>
 
-<main id="catalogue">
+<main id="afficheInstrument">
     <?php foreach ($allInstruments as $tabInfosInstrument): ?>
-        <figure>
+        <div>
             <a href="t_catalogue.ctrl.php?instrument=<?=$instrument?>">
                 <img src="../images/<?=$instrument?>/<?=$tabInfosInstrument['numArticle']?>.jpg">
-            
-                <figcaption>
-                    <?=$instrument?>
-                </figcaption>
+                <div>
+                    <h2><?=$tabInfosInstrument['nom']?></h2>
+                    <p>Prix : <?=$tabInfosInstrument['prix']?> €</p>
+                </div>
             </a>
-        </figure>
+        </div>
     <?php endforeach; ?>
 </main>
 
