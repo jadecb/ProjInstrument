@@ -57,13 +57,11 @@ $view = new View();
 if(isset($prenom)){
     $view->assign('prenom',$prenom);
 }
-<<<<<<< HEAD
+
 if(isset($gestionnaire)){
     $gestionnaire = $_SESSION['gestionnaire'];
 }
-var_dump($$article[0]);
-=======
->>>>>>> cf3921edb56128151b45d0935e302e956f7d4d8e
+
 $view->assign('tabInfosArticle',$$article[0]);
 $view->assign('InfoArticleAttributs',$InfoArticleAttributs);
 $view->display('afficheArticle.view.php');
