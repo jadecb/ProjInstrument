@@ -12,9 +12,9 @@
                 
                 </div>
             </a>
-            <div id="panier">
-                        <a href="#"><img src="../images/panier.png" alt=""></a>
-                    </div>
+            <?php if(isset($prenom)): ?>
+                <div id="panier"><a href="t_panier.ctrl.php"><img src="../images/panier.png" alt=""></a></div>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 </main>
