@@ -1,17 +1,29 @@
 <?php require("../view/header.php"); ?>
 
 <main id="catalogue">
-    <?php foreach ($allInstruments as $instrument): ?>
-        <figure>
-            <a href="t_catalogue.ctrl.php?instrument=<?=$instrument?>">
-                <img src="../images/catalogue/<?=$instrument?>.jpg">
+
+    <figure>
+        <a href="t_catalogueAccessoire.ctrl.php>">
+            <img src="../images/catalogue/piano.jpg">
             
-                <figcaption>
-                    <?=$instrument?>
-                </figcaption>
-            </a>
-        </figure>
-    <?php endforeach; ?>
+            <figcaption>
+                Accessoires
+            </figcaption>
+        </a>
+    </figure>
+
+    <figure>
+        <a href="t_catalogueInstrument.ctrl.php">
+            <img src="../images/catalogue/guitare.jpg">
+            
+            <figcaption>
+                Instruments de musique
+            </figcaption>
+        </a>
+    </figure>
+
+
+
 </main>
 
 
