@@ -7,6 +7,9 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
+if(isset($_SESSION['gestionnaire'])){
+    $gestionnaire = $_SESSION['gestionnaire'];
+}
 
 // Récupération du type d'instrumment voulant etre affiché
 // si non trouvé renvoi au controleur précédent
@@ -38,6 +41,9 @@ $instrumentAttributs = $InstrumentsAttributs[$instrument];
 $view = new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
+}
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
 }
 $view->assign('instrument',$instrument);
 $view->assign('tabInfosInstrument',$$instrument[0]);

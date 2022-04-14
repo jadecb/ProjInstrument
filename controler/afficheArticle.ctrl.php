@@ -7,6 +7,9 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
+if(isset($_SESSION['gestionnaire'])){
+    $gestionnaire = $_SESSION['gestionnaire'];
+}
 
 // Récupération du type d'instrumment voulant etre affiché
 // si non trouvé renvoi au controleur précédent
@@ -51,8 +54,11 @@ $$article = $DAO->$method($numArticle);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-if(isset($_SESSION['prenom'])){
+if(isset($prenom)){
     $view->assign('prenom',$prenom);
+}
+if(isset($gestionnaire)){
+    $gestionnaire = $_SESSION['gestionnaire'];
 }
 var_dump($$article[0]);
 $view->assign('tabInfosArticle',$$article[0]);

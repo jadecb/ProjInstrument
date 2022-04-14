@@ -8,6 +8,9 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
+if(isset($_SESSION['gestionnaire'])){
+    $gestionnaire = $_SESSION['gestionnaire'];
+}
 
 /* *** PARTIE USAGE DU MODELE *** */
 
@@ -20,7 +23,9 @@ $view= new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
 }
-
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
+}
 $view->display('catalogue.view.php');
 
 ?>

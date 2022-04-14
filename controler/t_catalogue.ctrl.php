@@ -8,6 +8,9 @@ require_once(__DIR__.'/../model/accessoireDAO.class.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
+if(isset($_SESSION['gestionnaire'])){
+    $gestionnaire = $_SESSION['gestionnaire'];
+}
 
 // Récupération du choix voulant etre affiché
 // si non trouvé renvoi au controleur précédent
