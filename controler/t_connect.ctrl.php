@@ -38,9 +38,18 @@ if(!empty($infoClient)){
 $nbArticlePanier = $panierDAO->getNbrArticlePanier($_SESSION['numClient']);
 $_SESSION['nbArticlePanier'] = $nbArticlePanier;
 /* *** GESTION DE LA VUE *** */
+if(isset($_SESSION['prenom']) && isset($_SESSION['nbArticlePanier'])){
+    $prenom = $_SESSION['prenom'];
+    $nbArticlePanier = $_SESSION['nbArticlePanier'];
+}
+
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+    $gestionnaire = true;
+}
+
 
 $view = new View();
-
+var_dump($_SESSION);
 if(!empty($infoClient)){
     if(isset($prenom)){
         $view->assign('prenom',$prenom);
