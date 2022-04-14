@@ -56,6 +56,19 @@ class InfoArticleDAO{
         return (isset($Array[0]))?$allArticles[$i-1]:'';
     }
 
+    // renvoi le type d'article (=nom de la table dans laquelle il se trouve) de numéro $numArticle
+    // null si non trouvée
+    function getArticle(int $numArticle) : array {
+
+        $typeArticle = $this->getType($numArticle);
+        if(!empty($typeArticle)){
+            $req = 'SELECT * FROM '.$typeArticle.' i, infoArticle ia WHERE i.numArticle = ia.numArticle AND i.numArticle='.$numArticle;
+            $sth = $this->db->query($req);
+            $Array = $sth->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return (isset($Array[0]))?$Array[0]:array();
+    }
+
 }
 
 ?>
