@@ -18,7 +18,6 @@ class AccessoireDAO{
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, a.fournisseur, a.materiaux, a.marque, a.typeAcc FROM infoArticle ia, accessoire a WHERE ia.numArticle='.$numArticle.' AND a.numArticle='.$numArticle.'';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
-        var_dump($resArray);
         return $resArray;
     }
     // Renvoi un tableau contenant les info de tous les accessoires, le tableau est vide si aucun accessoire n'existe

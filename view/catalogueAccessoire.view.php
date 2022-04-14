@@ -3,7 +3,7 @@
 <main id="afficheInstrument">
     <?php foreach ($allAccessoires as $accessoire): ?>
         <div>
-            <a href="#">
+            <a href="afficheArticle.ctrl.php?numArticle=<?=$accessoire['numArticle']?>">
                 <img src="../images/<?=$accessoire['numArticle']?>.jpg">
             
                 <div>
