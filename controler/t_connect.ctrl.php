@@ -41,7 +41,7 @@ if(!empty($infoClient)){
         $view->assign('prenom',$_SESSION['prenom']);
     }
     
-    if(isset($_SESSION['gestionnaire'])){
+    if(isset($_SESSION['gestionnaire'])&& $_SESSION['gestionnaire']==1){
         $view->assign('gestionnaire',$_SESSION['gestionnaire']);
     }
     $view->display('index.view.php');

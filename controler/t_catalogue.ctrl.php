@@ -36,6 +36,6 @@ if(isset($_SESSION['prenom'])){
 }
 $view->assign('instrument',$instrument);
 $view->assign('allInstruments',$allInstrument);
-$view->display('afficheInstrument.view.php');
+$view->display('afficheInstruments.view.php');
 
 ?>
