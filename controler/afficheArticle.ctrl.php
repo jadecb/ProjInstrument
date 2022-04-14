@@ -7,8 +7,9 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
-if(isset($_SESSION['gestionnaire'])){
-    $gestionnaire = $_SESSION['gestionnaire'];
+
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+    $gestionnaire = true;
 }
 
 // Récupération du type d'instrumment voulant etre affiché
@@ -59,7 +60,7 @@ if(isset($prenom)){
 }
 
 if(isset($gestionnaire)){
-    $gestionnaire = $_SESSION['gestionnaire'];
+    $view->assign('gestionnaire',$gestionnaire);
 }
 
 $view->assign('tabInfosArticle',$$article[0]);

@@ -8,8 +8,9 @@ require_once(__DIR__.'/../framework/view.fw.php');
 if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
-if(isset($_SESSION['gestionnaire'])){
-    $gestionnaire = $_SESSION['gestionnaire'];
+
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+    $gestionnaire = true;
 }
 
 /* *** PARTIE USAGE DU MODELE *** */
@@ -20,9 +21,10 @@ if(isset($_SESSION['gestionnaire'])){
 /* *** GESTION DE LA VUE *** */
 
 $view= new View();
-if(isset($_SESSION['prenom'])){
+if(isset($prenom)){
     $view->assign('prenom',$prenom);
 }
+
 if(isset($gestionnaire)){
     $view->assign('gestionnaire',$gestionnaire);
 }

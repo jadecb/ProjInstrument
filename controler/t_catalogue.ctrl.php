@@ -5,11 +5,12 @@ require_once(__DIR__.'/../framework/view.fw.php');
 require_once(__DIR__.'/../model/accessoireDAO.class.php');
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
-if(isset($_SESSION['prenom'])){
-    $prenom = $_SESSION['prenom'];
+if(isset($prenom)){
+    $view->assign('prenom',$prenom);
 }
-if(isset($_SESSION['gestionnaire'])){
-    $gestionnaire = $_SESSION['gestionnaire'];
+
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
 }
 
 // Récupération du choix voulant etre affiché

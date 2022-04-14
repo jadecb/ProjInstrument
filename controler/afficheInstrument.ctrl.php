@@ -39,9 +39,10 @@ $instrumentAttributs = $InstrumentsAttributs[$instrument];
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-if(isset($_SESSION['prenom'])){
+if(isset($prenom)){
     $view->assign('prenom',$prenom);
 }
+
 if(isset($gestionnaire)){
     $view->assign('gestionnaire',$gestionnaire);
 }

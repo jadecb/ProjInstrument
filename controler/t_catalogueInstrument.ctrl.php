@@ -8,6 +8,10 @@ if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
 
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+    $gestionnaire = true;
+}
+
 // Récupération du type d'instrumment voulant etre affiché
 // si non trouvé renvoi au controleur précédent
 if(isset($_GET['instrument'])){
@@ -31,8 +35,12 @@ $allInstrument = $DAO->$method();
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
-if(isset($_SESSION['prenom'])){
+if(isset($prenom)){
     $view->assign('prenom',$prenom);
+}
+
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
 }
 $view->assign('instrument',$instrument);
 $view->assign('allInstruments',$allInstrument);
