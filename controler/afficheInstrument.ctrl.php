@@ -18,7 +18,6 @@ else{
     header('Location: catalogue.ctrl.php');
 }
 
-
 // ajout de la classDAO de l'instrument choisi
 require_once(__DIR__.'/../model/'.$instrument.'DAO.class.php');
 /* *** PARTIE USAGE DU MODELE *** */
@@ -28,10 +27,10 @@ $DAO = $instrument.'DAO';
 $DAO = new $DAO();
 
 $method = 'get'.ucfirst($instrument);
-$$instrument = $DAO->$method();
+$$instrument = $DAO->$method($numArticle);
 
 require_once('../model/InfoInstrumentAttributs.php');
-require_once('../model/InstrumentsAttributs');
+require_once('../model/InstrumentsAttributs.php');
 $instrumentAttributs = $InstrumentsAttributs[$instrument];
 
 /* *** GESTION DE LA VUE *** */
@@ -40,10 +39,12 @@ $view = new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
 }
+
 $view->assign('instrument',$instrument);
 $view->assign('tabInfosInstrument',$$instrument);
 $view->assign('InfoInstrumentAttributs',$InfoInstrumentAttributs);
 $view->assign('instrumentAttributs',$instrumentAttributs);
+
 $view->display('afficheInstrument.view.php');
 
 ?>

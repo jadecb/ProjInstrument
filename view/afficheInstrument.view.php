@@ -1,5 +1,6 @@
 <?php require("../view/header.php"); ?>
 
+<?var_dump($method);?>
 <main id="afficheInstrument">
         <div>
             <img src="../images/<?=$instrument?>/<?=$tabInfosInstrument['numArticle']?>.jpg">
