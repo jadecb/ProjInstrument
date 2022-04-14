@@ -399,3 +399,12 @@ insert into Triangle values(69, 120);
 insert into infoArticle values (74, 'Triangle acier', 24.99);
 insert into infoInstrument values (74, 'acier', 'argenté', 15,15,1);
 insert into Triangle values(74, 240);
+
+
+/* Accessoires */
+
+insert into infoArticle values (140, 'Mediator en plastique', 4.99);
+insert into Accessoire values (140, 'test', 'test2', 'test3', 'mediator');
+
+insert into infoArticle values (141, 'Mediator en metal', 9.99);
+insert into Accessoire values (141, 'test7', 'test6', 'test5', 'mediator');

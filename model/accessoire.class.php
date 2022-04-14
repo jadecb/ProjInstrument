@@ -3,15 +3,15 @@
 class Accessoire extends infoArticle{
 
     private string $fournisseur;
-    private string $materiau;
+    private string $materiaux;
     private string $marque;
     private string $typeAcc;
 
-    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $materiau='',
+    function __construct(int $numArticle=0, string $nom='', int $prix=0, string $fournisseur='', string $materiaux='',
     string $marque='',string $typeAcc=''){
         parent::__construct($numArticle, $nom, $prix);
         $this->fournisseur = $fournisseur;
-        $this->materiau = $materiau;
+        $this->materiaux = $materiaux;
         $this->marque = $marque;
         $this->typeAcc = $typeAcc;
     }

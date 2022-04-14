@@ -15,7 +15,7 @@ if(isset($_SESSION['prenom'])){
 
 $accessoireDAO = new AccessoireDAO();
 $allAccessoires = $accessoireDAO->getAllAccessoire();
-var_dump($_SESSION);
+var_dump($allAccessoires);
 
 /* *** GESTION DE LA VUE *** */
 
