@@ -4,6 +4,8 @@ require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
 require_once('../model/client.class.php');
 require_once('../model/clientDAO.class.php');
+require_once('../model/allInstruments.php');
+
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
 
@@ -44,6 +46,7 @@ if(!empty($infoClient)){
     if(isset($_SESSION['gestionnaire'])&& $_SESSION['gestionnaire']==1){
         $view->assign('gestionnaire',$_SESSION['gestionnaire']);
     }
+    $view->assign('allInstruments', $allInstruments);
     $view->display('index.view.php');
 }
 else{
