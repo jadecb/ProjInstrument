@@ -3,8 +3,8 @@
 <main id="catalogue">
 
     <figure>
-        <a href="t_catalogueAccessoire.ctrl.php>">
-            <img src="../images/catalogue/piano.jpg">
+        <a href="t_catalogue.ctrl.php?choix=instrument>">
+            <img src="../images/catalogue/accessoire.jpg">
             
             <figcaption>
                 Accessoires
@@ -13,8 +13,8 @@
     </figure>
 
     <figure>
-        <a href="t_catalogueInstrument.ctrl.php">
-            <img src="../images/catalogue/guitare.jpg">
+        <a href="t_catalogue.ctrl.php?choix=instrument">
+            <img src="../images/catalogue/instruments.jpg">
             
             <figcaption>
                 Instruments de musique
