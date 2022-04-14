@@ -54,10 +54,8 @@ $view = new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
 }
-var_dump($$article[0]);
 $view->assign('tabInfosArticle',$$article[0]);
 $view->assign('InfoArticleAttributs',$InfoArticleAttributs);
-var_dump($InfoArticleAttributs);
 $view->display('afficheArticle.view.php');
 
 ?>
