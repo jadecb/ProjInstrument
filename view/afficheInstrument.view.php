@@ -11,11 +11,11 @@
             <table>
                 <?php foreach($InfoInstrumentAttributs as $attribut): ?>
                     <tr><td><?=ucfirst($attribut)?></td><td><?=$tabInfosInstrument[$attribut]?></td></tr>
-                <? endforeach; ?>
+                <?php endforeach; ?>
 
                 <?php foreach($instrumentAttributs as $key => $value): ?>
                     <tr><td><?=ucfirst($key)?></td><td><?=$tabInfosInstrument[$key]?></td></tr>
-                <? endforeach; ?>
+                <?php endforeach; ?>
             </table>
         </div>
 </main>

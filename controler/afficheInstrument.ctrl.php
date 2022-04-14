@@ -39,9 +39,8 @@ $view = new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
 }
-
 $view->assign('instrument',$instrument);
-$view->assign('tabInfosInstrument',$$instrument);
+$view->assign('tabInfosInstrument',$$instrument[0]);
 $view->assign('InfoInstrumentAttributs',$InfoInstrumentAttributs);
 $view->assign('instrumentAttributs',$instrumentAttributs);
 
