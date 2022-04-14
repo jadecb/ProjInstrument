@@ -19,28 +19,18 @@ else{
 
 require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 
-//USAGE DE LA DAO
-$infoArticleDAO = new InfoArticleDAO();
-
-$typeArticle = 
-
-
-
-$dao = new InfoArticleDAO(); // instancie l'objet DAO
-        $req = 'SELECT max(numArticle) FROM InfoArticle';
-        $resultat = $this->db->query($req);
-
-
 /* *** PARTIE USAGE DU MODELE *** */
 
+//USAGE DE LA DAO
+$infoArticleDAO = new InfoArticleDAO();
+$allArticles = $infoArticleDAO->getArticleRecherche($recherche);
 
-
+var_dump($allArticles);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
 if(isset($prenom)){
     $view->assign('prenom',$prenom);
 }
-$view->assign('gestionnaire',$gestionnaire);
-$view->assign('resultat',$sth);
+$view->assign('allArticles',$allArticles);
 $view->display('resultatRecherche.view.php');
