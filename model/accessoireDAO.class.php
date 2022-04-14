@@ -5,11 +5,11 @@ require_once(dirname(__FILE__.'/accessoire.class.php'));
 
 // Data Access Object pour Accessoire
 class AccessoireDAO{
-    private $db;
+    private PDO $db;
 
-  // Constructeur chargé d'ouvrir la BD
-  function __construct() {
-    $this->db = getDAO();
+    // Constructeur chargé d'ouvrir la BD
+    function __construct() {
+        $this->db = getDAO();
     }
 
     // Renvoi un tableau contenant les info de l'accessoire, le tableau est vide si l'accessoire n'existe pas
@@ -23,7 +23,7 @@ class AccessoireDAO{
     // Renvoi un tableau contenant les info de tous les accessoires, le tableau est vide si aucun accessoire n'existe
     function getAllAccessoire() : array{
         $dao = new AccessoireDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, a.fournisseur, a.materiau, a.marque, a.type FROM infoArticle ia, accessoire a WHERE ia.numArticle=a.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, a.fournisseur, a.materiau, a.marque, a.type FROM infoArticle ia, accessoire a WHERE ia.numArticle=a.numArticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
