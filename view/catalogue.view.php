@@ -4,7 +4,7 @@
 
     <figure>
         <a href="t_catalogue.ctrl.php?choix=accessoire">
-            <img src="../images/catalogue/accessoire.jpg">
+            <img src="../images/accessoire.jpg">
             
             <figcaption>
                 Accessoires
@@ -14,7 +14,7 @@
 
     <figure>
         <a href="t_catalogue.ctrl.php?choix=instrument">
-            <img src="../images/catalogue/instruments.jpg">
+            <img src="../images/instruments.jpg">
             
             <figcaption>
                 Instruments de musique

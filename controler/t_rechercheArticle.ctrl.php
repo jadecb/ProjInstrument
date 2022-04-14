@@ -25,7 +25,6 @@ require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 $infoArticleDAO = new InfoArticleDAO();
 $allArticles = $infoArticleDAO->getArticleRecherche($recherche);
 
-var_dump($allArticles);
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();

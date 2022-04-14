@@ -29,11 +29,11 @@ class InfoArticleDAO{
         $dao = new InfoArticleDAO();
         $i = 0;
         while($i < count($allArticles)){
-            $req = 'SELECT numArticle, nom, prix FROM '.$allArticles[$i].' i, infoArticle ia WHERE i.numArticle = '.$numArticle.' AND ia.numArticle = '.$numArticle.' AND ia.nom LIKE %'.$search.'%';
+            $req = 'SELECT ia.numArticle, ia.nom, ia.prix FROM '.$allArticles[$i].' i, infoArticle ia WHERE i.numArticle = ia.numArticle AND ia.nom LIKE "%'.$search.'%"';
             $sth = $this->db->query($req);
-            $Array = $sth->fetchAll(PDO::FETCH_NUM);
-            if(!empty($Array[0])){
-                $res[] = $Array[0];
+            $Array = $sth->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($Array)){
+                $res[] = $Array;
             }
             $i++;
         }

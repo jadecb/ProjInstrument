@@ -4,7 +4,7 @@
     <?php foreach ($allAccessoires as $accessoire): ?>
         <figure>
             <a href="#">
-                <img src="../images/accessoire/<?=$accessoire['numArticle']?>.jpg">
+                <img src="../images/<?=$accessoire['numArticle']?>.jpg">
             
                 <figcaption>
                     <?=$accessoire['nom']?>
