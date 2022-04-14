@@ -9,8 +9,9 @@ if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
 
-/* *** PARTIE USAGE DU MODELE *** */
 
+/* *** PARTIE USAGE DU MODELE *** */
+require_once('../model/allInstruments.php');
 // tableau contenant tous les noms d'instrument
 
 
@@ -20,7 +21,7 @@ $view= new View();
 if(isset($_SESSION['prenom'])){
     $view->assign('prenom',$prenom);
 }
-
-$view->display('catalogue.view.php');
+$view->assign('allInstruments',$allInstruments);
+$view->display('catalogueInstrument.view.php');
 
 ?>

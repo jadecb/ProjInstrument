@@ -3,7 +3,7 @@
 <main id="catalogue">
 
     <figure>
-        <a href="t_catalogue.ctrl.php?choix=instrument>">
+        <a href="t_catalogue.ctrl.php?choix=accessoire">
             <img src="../images/catalogue/accessoire.jpg">
             
             <figcaption>
