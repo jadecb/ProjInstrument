@@ -2,7 +2,7 @@
 
 <?var_dump($method);?>
 <main id="afficheInstrument">
-        <div>
+        <div id="unInstrument">
             <img src="../images/<?=$instrument?>/<?=$tabInfosInstrument['numArticle']?>.jpg">
             <div>
                 <h2><?=$tabInfosInstrument['nom']?></h2>

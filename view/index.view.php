@@ -9,7 +9,7 @@ $a = null;
     <p>Producteur d'instruments de musique depuis 2007</p>
     <p>Découvrez nos produits phares :</p>
     <div  id="mainpage">
-    <?php for($i=0; $i<3; $i++): ?>
+    <?php for($i=0; $i<4; $i++): ?>
         <figure>
             <a href="t_catalogue.ctrl.php?instrument=<?=$allInstruments[$i]?>">
                 <img src="../images/catalogue/<?=$allInstruments[$i]?>.jpg" alt="image catalogue">

@@ -201,6 +201,12 @@ input[type=submit]:hover{
 #afficheInstrument div a img{
 	width:200px;
 	height: 200px;
+	float:left;
+}
+
+#unInstrument img{
+with:200px;
+height:200px;
 }
 
 #afficheInstrument div a div {
