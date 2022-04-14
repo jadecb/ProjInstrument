@@ -4,7 +4,7 @@
     <?php foreach ($allAccessoires as $accessoire): ?>
         <figure>
             <a href="t_catalogueAccessoire.ctrl.php?accessoire=<?=$accessoire?>">
-                <img src="../images/catalogue/<?=$accessoire?>.jpg">
+                <img src="../images/<?=$accessoire?>.jpg">
             
                 <figcaption>
                     <?=$accessoire?>

@@ -12,7 +12,7 @@ $a = null;
     <?php for($i=0; $i<3; $i++): ?>
         <figure>
             <a href="t_catalogue.ctrl.php?instrument=<?=$allInstruments[$i]?>">
-                <img src="../images/catalogue/<?=$allInstruments[$i]?>.jpg" alt="image catalogue">
+                <img src="../images/<?=$allInstruments[$i]?>.jpg" alt="image catalogue">
             <figcaption>
                 <?=$allInstruments[$i]?>
             </figcaption>
