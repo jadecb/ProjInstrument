@@ -203,3 +203,30 @@ input[type=submit]:hover{
 	padding: 1em 2em 1em 2em;
 	margin: 0 1em 1em 1em;
 }
+
+/*******************/
+/****INDEX**********/
+/*******************/
+
+
+
+#mainpage {
+	display:flex;
+	flex-wrap:wrap;
+	margin-left:5%;
+	margin-right:15%;
+	justify-content: center;
+}
+
+#mainpage figure{
+	margin:10px;
+}
+#mainpage figure a img {
+	width:200px;
+	height:200px;
+}
+#mainpage figure a figcaption{
+	color:var(--dark-blue);
+	text-transform: uppercase;
+	text-align:center;
+}

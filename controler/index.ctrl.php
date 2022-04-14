@@ -27,6 +27,16 @@ if(isset($gestionnaire)){
     $view->assign('gestionnaire',$gestionnaire);
 }
 
-$view->display('index.view.php');
+require_once('../model/allInstruments.php');
+
+if(isset($_SESSION['prenom'])&& $_SESSION['gestionnaire']==0){
+    $view->assign('allInstruments',$allInstruments);
+    $view->display('catalogue.view.php');
+}
+else {
+    $view->assign('allInstruments',$allInstruments);
+    $view->display('index.view.php');
+}
+
 
 ?>
