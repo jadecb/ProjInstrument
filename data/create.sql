@@ -163,34 +163,9 @@ CREATE TABLE Accessoire(
    fournisseur VARCHAR(50),
    materiaux VARCHAR(50),
    marque VARCHAR(50),
-   type VARCHAR(50),
+   typeAcc VARCHAR(50),
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES Article(numArticle)
-);
-
-CREATE TABLE accessoireCorde(
-   numArticle INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
-);
-
-CREATE TABLE accessoireMediator(
-   numArticle INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
-);
-
-CREATE TABLE accessoireMetronome(
-   numArticle INT,
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
-);
-
-CREATE TABLE accessoireArchet(
-   numArticle INT,
-   materiauxPoils VARCHAR(50),
-   PRIMARY KEY(numArticle),
-   FOREIGN KEY(numArticle) REFERENCES Accessoire(numArticle)
 );
 
 
