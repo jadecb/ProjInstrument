@@ -3,7 +3,7 @@
 <main id="afficheInstrument">
     <?php foreach ($allInstruments as $tabInfosInstrument): ?>
         <div>
-            <a href="afficheInstrument.ctrl.php?instrument=<?=$instrument?>">
+            <a href="afficheInstrument.ctrl.php?instrument=<?=$instrument?>&numArticle=<?=$tabInfosInstrument['numArticle']?>">
                 <img src="../images/<?=$instrument?>/<?=$tabInfosInstrument['numArticle']?>.jpg">
                 <div>
                     <h2><?=$tabInfosInstrument['nom']?></h2>
