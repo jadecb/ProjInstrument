@@ -10,8 +10,20 @@
 </head>
 <body>
   <header>
-    
       <a id="index" href="index.ctrl.php"><h1>Sibémol</h1></a>
+
+      <form action="t_rechercheArticle.ctrl.php" method="get">
+        <fieldset>
+          <label for="rechercher">Rechercher sur le site :</label>
+          <input type="text" name="rechercher" required/>
+          <input type="submit" value="ENVOYER">
+        </fieldset>
+</form>
+
+      
+
+
+
 
       <?php if(isset($prenom)): ?>
         <p>bonjour <?=$prenom?></p>

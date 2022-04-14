@@ -20,6 +20,13 @@ class InfoArticleDAO{
         return intval($resArray[0][0]);
     }
 
+    function getRecherche(string $req) : int {
+        $dao = new InfoArticleDAO();
+        $sth = $this->db->query($req);
+        $resArray = $sth->fetchAll(PDO::FETCH_NUM);
+        return intval($resArray);
+    }
+
 }
 
 ?>
