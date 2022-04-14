@@ -49,7 +49,6 @@ if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
 
 
 $view = new View();
-var_dump($_SESSION);
 if(!empty($infoClient)){
     if(isset($prenom)){
         $view->assign('prenom',$prenom);
