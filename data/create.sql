@@ -168,6 +168,12 @@ CREATE TABLE Accessoire(
    FOREIGN KEY(numArticle) REFERENCES Article(numArticle)
 );
 
-
+CREATE TABLE Panier(
+   numClient INT,
+   numArticle INT,
+   PRIMARY KEY(numClient),
+   FOREIGN KEY(numClient) REFERENCES Client(numClient),
+   FOREIGN KEY(numArticle) REFERENCES Article(numArticle) 
+);
 
 INSERT INTO Client VALUES (1,"admin","admin","paul@gmail.com","2000-02-02", "12345678", true);

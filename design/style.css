@@ -211,6 +211,11 @@ input[type=submit]:hover{
 	margin: 0 1em 1em 1em;
 }
 
+#afficheInstrument div div a img{
+	width:100px;
+	height: 100px;
+}
+
 /*******************/
 /****INDEX**********/
 /*******************/
