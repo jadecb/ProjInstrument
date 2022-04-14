@@ -2,16 +2,15 @@
 
 <main id="afficheInstrument">
     <?php foreach ($allAccessoires as $accessoire): ?>
-        <div>
+        <figure>
             <a href="#">
                 <img src="../images/<?=$accessoire['numArticle']?>.jpg">
             
-                <div>
-                    <h2><?=$accessoire['nom']?></h2>
-                    <p>Prix : <?=$accessoire['prix']?>€ </p>
-                </div>
+                <figcaption>
+                    <?=$accessoire['nom']?>
+                </figcaption>
             </a>
-        </div>
+        </figure>
     <?php endforeach; ?>
 </main>
 
