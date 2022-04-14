@@ -149,6 +149,8 @@ input[type=submit]:hover{
 	flex-wrap:wrap;
 	margin-left:5%;
 	margin-right:5%;
+	justify-content: center;
+
 }
 #catalogue figure{
 	margin:10px;
@@ -171,6 +173,7 @@ input[type=submit]:hover{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 #afficheInstrument div a {
