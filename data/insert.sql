@@ -416,5 +416,50 @@ insert into infoArticle values (145, 'Mediator en bois', 0.99);
 insert into Accessoire values (145, 'Gibson', 'Bois', 'Gibson', 'mediator');
 
 
-insert into infoArticle values(146, 'Archet violon en crin', 49.99);
-insert into Accessoire values (146, )
+insert into infoArticle values(146, 'Archet violon en bois, crin', 49.99);
+insert into Accessoire values (146, 'Gliga', 'Bois et crin', 'Gliga', 'Archet');
+
+insert into infoArticle values(147, 'Archet violon en carbone, crin', 99.99);
+insert into Accessoire values (147, 'Gliga', 'Carbone et crin', 'Gliga', 'Archet');
+
+insert into infoArticle values(148, 'Archet violon Stradivarius en carbone, crin', 199.99);
+insert into Accessoire values (148, 'Stradivarius', 'Carbone et crin', 'Stradivarius', 'Archet');
+
+
+insert into infoArticle values(149, 'Jeu de 6 cordes pour guitare acoustique folk', 19.99);
+insert into Accessoire values(149, 'Fender', 'Acier', 'Fender', 'Cordes');
+
+insert into infoArticle values (150, 'Jeu de 6 cordes pour guitare acoustique classique',19.99);
+insert into Accessoire values (150, 'Fazley', 'Acier et nylon','Fazley', 'Cordes');
+
+insert into infoArticle values (151, 'Jeu de 5 cordes pour guitare basse', 20.99);
+insert into Accessoire values (151, 'Dingwall', 'Nickel', 'Dingwall', 'Cordes');
+
+insert into infoArticle values (152, 'Jeu de 4 cordes pour guitare basse', 20.99);
+insert into Accessoire values (152, 'gear4music', 'Nickel', 'gear4music', 'Cordes');
+
+insert into infoArticle values (153, 'Jeu de 6 cordes en nickel pour guitare électrique', 20.99);
+insert into Accessoire values (153, 'Shiver', 'Nickel', 'Shiver', 'Cordes');
+
+insert into infoArticle values (154, 'Jeu de 6 cordes inox pour guitare électrique', 20.99);
+insert into Accessoire values (154, 'Fender', 'Acier inoxydable', 'Fender', 'Cordes');
+
+
+insert into infoArticle values (155, 'Métronome électronique Korg rouge avec les piles', 29.99);
+insert into Accessoire values (155, 'Korg', 'Plastique', 'Korg', 'Métronome');
+
+insert into infoArticle values (156, 'Métronome électronique RockTile avec les piles', 24.99);
+insert into Accessoire values (156, 'RockTile', 'Plastique', 'RockTile', 'Métronome');
+
+insert into infoArticle values (157, 'Métronome électronique Korg bleu sans pile', 32.99);
+insert into Accessoire values (157, 'Korg', 'Plastique', 'Korg', 'Métronome');
+
+insert into infoArticle values (158, 'Métronome mécanique Wittner', 39.99);
+insert into Accessoire values (158, 'Wittner', 'Plastique et métal', 'Wittner', 'Métronome');
+
+insert into infoArticle values (159, 'Métronome mécanique Martisan', 39.99);
+insert into Accessoire values (159, 'Martisan', 'Plastique et métal', 'Martisan', 'Métronome');
+
+insert into infoArticle values (160, 'Métronome mécanique Conductor', 59.99);
+insert into Accessoire values (160, 'Conductor', 'Plastique et métal', 'Conductor', 'Métronome');
+
