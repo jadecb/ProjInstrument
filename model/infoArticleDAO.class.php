@@ -24,6 +24,7 @@ class InfoArticleDAO{
     // renvoi un tableau contenant plusieurs tableaux
     // chacun ayant le numArticle, le nom et le prix d'un article ayant $search dans son nom
     function getArticleRecherche(string $search) : array {
+
         require_once('../model/allArticles.php');
         $dao = new InfoArticleDAO();
         $i = 0;
