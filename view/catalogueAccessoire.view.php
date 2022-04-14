@@ -11,6 +11,9 @@
                     <p>Prix : <?=$accessoire['prix']?>€ </p>
                 </div>
             </a>
+            <div id="panier">
+                        <a href="#"><img src="../images/panier.png" alt=""></a>
+                    </div>
         </div>
     <?php endforeach; ?>
 </main>

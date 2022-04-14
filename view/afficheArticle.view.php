@@ -12,6 +12,9 @@
                     <tr><td><?=ucfirst($attribut)?></td><td><?=$tabInfosArticle[$attribut]?></td></tr>
                 <?php endforeach; ?>
             </table>
+            <div id="panier">
+                        <a href="#"><img src="../images/panier.png" alt=""></a>
+                    </div>
         </div>
 </main>
 
