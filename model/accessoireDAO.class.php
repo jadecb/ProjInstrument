@@ -24,8 +24,7 @@ class AccessoireDAO{
     function getAllAccessoire() : array{
         $dao = new AccessoireDAO(); // instancie l'objet DAO
         $req = 'SELECT ia.numarticle, ia.nom, ia.prix, a.fournisseur, a.materiaux, a.marque, a.typeAcc FROM infoArticle ia, accessoire a WHERE ia.numArticle=a.numArticle';
-        $sth = $this->db->query($req, null);
-        var_dump($sth);
+        $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
     }
