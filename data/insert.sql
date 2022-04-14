@@ -403,8 +403,18 @@ insert into Triangle values(74, 240);
 
 /* Accessoires */
 
-insert into infoArticle values (140, 'Mediator en plastique', 4.99);
-insert into Accessoire values (140, 'test', 'test2', 'test3', 'mediator');
+insert into infoArticle values (140, 'Kit 5 Mediator en nylon 1mm', 4.99);
+insert into Accessoire values (140, 'USA', 'Nylon', 'USA', 'mediator');
 
-insert into infoArticle values (141, 'Mediator en metal', 9.99);
-insert into Accessoire values (141, 'test7', 'test6', 'test5', 'mediator');
+insert into infoArticle values (141, 'Kit 2 Mediator en metal Fender Extra Heavy', 9.99);
+insert into Accessoire values (141, 'Fender', 'Metal', 'Fender', 'mediator');
+
+insert into infoArticle values (142, 'Kit 2 Mediator en plastique noir Gibson', 4.99);
+insert into Accessoire values (142, 'Gibson', 'Plastique dur', 'Gibson', 'mediator');
+
+insert into infoArticle values (145, 'Mediator en bois', 0.99);
+insert into Accessoire values (145, 'Gibson', 'Bois', 'Gibson', 'mediator');
+
+
+insert into infoArticle values(146, 'Archet violon en crin', 49.99);
+insert into Accessoire values (146, )

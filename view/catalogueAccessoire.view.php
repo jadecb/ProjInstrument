@@ -3,11 +3,11 @@
 <main id="catalogue">
     <?php foreach ($allAccessoires as $accessoire): ?>
         <figure>
-            <a href="t_catalogueAccessoire.ctrl.php?accessoire=<?=$accessoire?>">
-                <img src="../images/catalogue/<?=$accessoire?>.jpg">
+            <a href="#">
+                <img src="../images/accessoire/<?=$accessoire['numArticle']?>.jpg">
             
                 <figcaption>
-                    <?=$accessoire?>
+                    <?=$accessoire['nom']?>
                 </figcaption>
             </a>
         </figure>
