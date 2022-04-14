@@ -9,7 +9,18 @@
             </div>
             <table>
                 <?php foreach($InfoArticleAttributs as $attribut): ?>
-                    <tr><td><?=ucfirst($attribut)?></td><td><?=$tabInfosArticle[$attribut]?></td></tr>
+                    <tr><td><?=ucfirst($attribut)?></td><td><?=$tabInfosArticle[$attribut]?>
+
+                    <?php
+                    if(in_array($attribut, array('longueur', 'largeur', 'hauteur'))):
+                    ?>cm
+                    <?php elseif($attribut=='prix'):?>
+                        €
+                    <?php endif;?>
+                
+                    
+                    
+                    </td></tr>
                 <?php endforeach; ?>
             </table>
         </div>
