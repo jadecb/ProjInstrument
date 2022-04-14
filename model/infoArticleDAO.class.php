@@ -12,6 +12,7 @@ class InfoArticleDAO{
         $this->db = getDAO();
     }
 
+    // renvoi le dernier numArticle de la base
     function getDernierNumArticle() : int {
         $dao = new InfoArticleDAO(); // instancie l'objet DAO
         $req = 'SELECT max(numArticle) FROM InfoArticle';
@@ -20,11 +21,22 @@ class InfoArticleDAO{
         return intval($resArray[0][0]);
     }
 
-    function getRecherche(string $req) : int {
+    // renvoi un tableau contenant plusieurs tableaux
+    // chacun ayant le numArticle, le nom et le prix d'un article ayant $search dans son nom
+    function getArticleRecherche(string $search) : array {
+        require_once('../model/allArticles.php');
         $dao = new InfoArticleDAO();
-        $sth = $this->db->query($req);
-        $resArray = $sth->fetchAll(PDO::FETCH_NUM);
-        return intval($resArray);
+        $i = 0;
+        while($i < count($allArticles)){
+            $req = 'SELECT numArticle, nom, prix FROM '.$allArticles[$i].' i, infoArticle ia WHERE i.numArticle = '.$numArticle.' AND ia.numArticle = '.$numArticle.' AND ia.nom LIKE %'.$search.'%';
+            $sth = $this->db->query($req);
+            $Array = $sth->fetchAll(PDO::FETCH_NUM);
+            if(!empty($Array[0])){
+                $res[] = $Array[0];
+            }
+            $i++;
+        }
+        return $res;
     }
 
 }
