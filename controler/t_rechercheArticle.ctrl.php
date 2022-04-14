@@ -9,6 +9,10 @@ if(isset($_SESSION['prenom'])){
     $prenom = $_SESSION['prenom'];
 }
 
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+    $gestionnaire = true;
+}
+
 // Vérification que le type d'article est bien récupérer sinon renvoi sur le controleur d'avant
 if(isset($_GET['rechercher'])){
     $recherche = $_GET['rechercher'];
@@ -30,6 +34,10 @@ $allArticles = $infoArticleDAO->getArticleRecherche($recherche);
 $view = new View();
 if(isset($prenom)){
     $view->assign('prenom',$prenom);
+}
+
+if(isset($gestionnaire)){
+    $view->assign('gestionnaire',$gestionnaire);
 }
 if($allArticles!= null){
     $view->assign('allArticles',$allArticles);
