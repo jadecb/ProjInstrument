@@ -4,8 +4,9 @@ require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
 
 /* *** PARTIE RECUPARATION DES DONNEES *** */
-if(isset($_SESSION['prenom'])){
+if(isset($_SESSION['prenom']) && isset($_SESSION['nbArticlePanier'])){
     $prenom = $_SESSION['prenom'];
+    $nbArticlePanier = $_SESSION['nbArticlePanier'];
 }
 
 if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
@@ -37,6 +38,7 @@ $allInstrument = $DAO->$method();
 $view = new View();
 if(isset($prenom)){
     $view->assign('prenom',$prenom);
+    $view->assign('nbArticlePanier',$nbArticlePanier);
 }
 
 if(isset($gestionnaire)){

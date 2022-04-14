@@ -24,7 +24,7 @@
                 <?php endforeach; ?>
             </table>
             <?php if(isset($prenom)): ?>
-                <div id="panier"><a href="t_panier.ctrl.php"><img src="../images/panier.png" alt=""></a></div>
+                <div id="panier"><a href="t_panier.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>"><img src="../images/panier.png" alt=""></a></div>
             <?php endif; ?>
         </div>
 </main>

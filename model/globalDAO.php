@@ -6,7 +6,7 @@ function getDAO(){
         try {
             $database = 'sqlite:'.dirname(__FILE__).'/../data/Sibemol.db';
             $DAO = new PDO($database, '', '');
-        } catch (PDOExeception $e) {
+        } catch (PDOException $e) {
             die("Echec lors de la connexion : ".$e->getMessage());
         }
     }

@@ -4,6 +4,7 @@ require_once(__DIR__.'/../config.php');
 require_once(__DIR__.'/../framework/view.fw.php');
 require_once('../model/client.class.php');
 require_once('../model/clientDAO.class.php');
+require_once('../model/panierDAO.class.php');
 require_once('../model/allInstruments.php');
 
 
@@ -23,7 +24,7 @@ else{
 
 // DAO
 $clientDAO = new ClientDAO();
-
+$panierDAO = new PanierDAO();
 // Appel à la DAO pour récupérer le client
 $infoClient = $clientDAO->getClient($mail, $mdp);
 
@@ -34,17 +35,20 @@ if(!empty($infoClient)){
     }
 }
 
+$nbArticlePanier = $panierDAO->getNbrArticlePanier($_SESSION['numClient']);
+$_SESSION['nbArticlePanier'] = $nbArticlePanier;
 /* *** GESTION DE LA VUE *** */
 
 $view = new View();
 
 if(!empty($infoClient)){
-    if(isset($_SESSION['prenom'])){
-        $view->assign('prenom',$_SESSION['prenom']);
+    if(isset($prenom)){
+        $view->assign('prenom',$prenom);
+        $view->assign('nbArticlePanier',$nbArticlePanier);
     }
     
-    if(isset($_SESSION['gestionnaire'])&& $_SESSION['gestionnaire']==1){
-        $view->assign('gestionnaire',$_SESSION['gestionnaire']);
+    if(isset($gestionnaire)){
+        $view->assign('gestionnaire',$gestionnaire);
     }
     $view->assign('allInstruments', $allInstruments);
     $view->display('index.view.php');

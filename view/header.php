@@ -39,7 +39,7 @@
 
       <li><a href="catalogue.ctrl.php">Catalogue</a></li>
       <?php if(isset($prenom)): ?>
-      <li><a href="panier.ctrl.php">Panier</a></li>
+      <li><a href="panier.ctrl.php">Panier(<?=$nbArticlePanier?>)</a></li>
       <?php endif; ?>
       <?php if(isset($prenom)): ?>
         <li><a href="#">Historique</a></li>

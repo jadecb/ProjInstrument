@@ -13,7 +13,7 @@
                 </div>
             </a>
             <?php if(isset($prenom)): ?>
-                <div id="panier"><a href="t_panier.ctrl.php"><img src="../images/panier.png" alt=""></a></div>
+                <div id="panier"><a href="t_panier.ctrl.php?numArticle=<?=$tabInfosInstrument['numArticle']?>"><img src="../images/panier.png" alt=""></a></div>
             <?php endif; ?>
         </div>
     <?php endforeach; ?>

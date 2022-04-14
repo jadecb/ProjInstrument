@@ -171,7 +171,7 @@ CREATE TABLE Accessoire(
 CREATE TABLE Panier(
    numClient INT,
    numArticle INT,
-   PRIMARY KEY(numClient),
+   PRIMARY KEY(numClient,numArticle),
    FOREIGN KEY(numClient) REFERENCES Client(numClient),
    FOREIGN KEY(numArticle) REFERENCES Article(numArticle) 
 );
