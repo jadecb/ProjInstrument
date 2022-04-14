@@ -23,7 +23,7 @@ class LuthDAO{
     // Renvoi un tableau contenant les info de tous les Luths, le tableau est vide si aucun Luth n'existe
     function getAllLuth() : array{
         $dao = new LuthDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Luth a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrCordes FROM infoArticle ia, infoInstrument ii, Luth a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

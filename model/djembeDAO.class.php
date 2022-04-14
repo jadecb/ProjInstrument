@@ -15,7 +15,7 @@ class DjembeDAO{
     // Renvoi un tableau contenant les info de la djembe, le tableau est vide si la djembe n'existe pas
     function getDjembe(int $numArticle) : array{
         $dao = new DjembeDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, d.typePeau FROM infoArticle ia, infoInstrument ii, djembe d where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND d.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, d.typePeau FROM infoArticle ia, infoInstrument ii, djembe d where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND d.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
@@ -23,7 +23,7 @@ class DjembeDAO{
     // Renvoi un tableau contenant les info de tous les Djembe, le tableau est vide si aucun Djembe n'existe
     function getAllDjembe() : array{
         $dao = new DjembeDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.typePeau FROM infoArticle ia, infoInstrument ii, Djembe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.typePeau FROM infoArticle ia, infoInstrument ii, Djembe a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

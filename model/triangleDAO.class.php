@@ -23,7 +23,7 @@ class TriangleDAO{
     // Renvoi un tableau contenant les info de tous les Triangles, le tableau est vide si aucun Triangle n'existe
     function getAllTriangle() : array{
         $dao = new TriangleDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.hauteur, a.poids FROM infoArticle ia, infoInstrument ii, Triangle a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.poids FROM infoArticle ia, infoInstrument ii, Triangle a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;
