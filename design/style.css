@@ -427,11 +427,12 @@ input[type=submit]:hover{
     margin: auto;
     font-size: 50px;
 }
-#catalogue section div h2 {
+#catalogue section div figcaption {
     color: #ffffff;
     margin: auto;
     font-size: 50px;
 }
+
 
 #main div h2 {
     color: #03030307;
