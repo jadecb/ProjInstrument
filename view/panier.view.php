@@ -7,7 +7,9 @@
 	<?php if(isset($allArticle)): ?>
 		<div>
 		<?php foreach($allArticle as $tabInfosArticle): ?>
+			<a href="afficheArticle.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>">
 			<img src="../images/<?=$tabInfosArticle['numArticle']?>.jpg"/>
+			</a>
 			<div>
 			<?=$tabInfosArticle['nom']?>
 			<br>

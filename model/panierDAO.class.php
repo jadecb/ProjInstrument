@@ -38,6 +38,7 @@ class PanierDAO{
     function retraitDansPanier(int $numClient, int $numArticle): void{
         $dao = new PanierDAO(); // instancie l'objet DAO
         $req = 'DELETE FROM Panier WHERE numClient='.$numClient.' AND numArticle='.$numArticle;
+        var_dump($req);
         $sth = $this->db->exec($req);
 
     }
