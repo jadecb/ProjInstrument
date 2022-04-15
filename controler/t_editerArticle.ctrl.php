@@ -28,29 +28,47 @@ else{
 
 //t_editerArticle.ctrl.php?instrument=banjo&NbrPiston=4&Nom=Tuba+pour+joueur+confirm%C3%A9&Prix=899.99&MateriauxPrincipal=cuivre&Couleur=dor%C3%A9&Largeur=86&Longueur=30&Hauteur=20
 
+
 $type = $_GET['type'];
 if($type!='accessoire'){
     if(isset($_GET['instrument'])){
         $ins=$_GET['instrument'];
     }
-    
-    $insDAO=ucfirst($ins);
-    require_once(__DIR__.'/../model/'.$ins.'.class.php');
-    require_once(__DIR__.'/../model/'.$ins.'DAO.class.php');
-    $insDAO = new $insDAO.'DAO';
 
+require_once(__DIR__.'/../model/'.$ins.'.class.php');
+require_once(__DIR__.'/../model/'.$ins.'DAO.class.php');
+    var_dump($ins);
+    $insDAO=ucfirst($ins);
+    var_dump($insDAO);
+
+    $method = $insDAO.'DAO';
+    $insDAO = new $method();
+    require('../model/InfoArticleAttributs.php');
     require('../model/InstrumentsAttributs.php');
-    $instrumentAttribut = $InstrumentsAttributs[$ins];
-    
-    foreach($instrumentAttribut as $nameAttribut => $tab){
+    require('../model/InfoInstrumentAttributs.php');
+
+    $InfoArticleAttributs = array_merge($InfoArticleAttributs, $InfoInstrumentAttributs);
+    $InfoArticleAttributs[] = array_keys($InstrumentsAttributs[$ins])[0];
+    $ins = ucfirst($ins);
+    $a = new $ins;
+
+    foreach($InfoArticleAttributs as $nameAttribut => $tab){
         if(isset($_GET[$nameAttribut])){
-            $$instrument->__set($nameAttribut,$_GET[$nameAttribut]);
+            $a->__set($nameAttribut,$_GET[$nameAttribut]);
         }
         else{
-            header('Location: index.ctrl.php');
+            header('Location: ajoutArticle.ctrl.php');
         }
     }
-    var_dump($$instrument);
+
+
+
+
+    var_dump($InfoArticleAttributs);
+
+    
+
+    $method->editInstrument($ins, $numArticle);
 
 }
 
