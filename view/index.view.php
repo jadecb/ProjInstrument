@@ -14,11 +14,11 @@ $a = null;
     </nav>
         <!-- Enfant -->  
         <div id="first">
-            <h2>Producteur d'instruments de musique depuis 2007</h2>
+            <h3>Producteur d'instruments de musique depuis 2007</h3>
         </div>
         <!-- Enfant -->  
         <div id="second">
-            <h2>Découvrez nos produits phares :</h2>
+            <h3>Découvrez nos produits phares :</h3>
         </div> 
         <div id=third>
         <image class=positionImage>
