@@ -4,23 +4,47 @@
 <head>
   <meta charset="utf-8">
   <title>Sibémol</title>
+
+
   <link rel="stylesheet" type="text/css" href="../design/style.css">
   <link rel = "icon" href = "../images/icon.png" type = "image/x-icon">
   <title></title>
+  </div>
 </head>
 <body>
   <header>
-      <a id="index" href="index.ctrl.php"><h1>Sibémol</h1></a>
+      <a id="index" href="index.ctrl.php"><h1 class="elegantshadow"> Sibémol </h1></a>
+      <div class="muzieknootjes">
+        <div class="noot-1">
+        &#9835; &#9833;
+        </div>
+        <div class="noot-2">
+        &#9833;
+        </div>
+        <div class="noot-3">
+        &#9839; &#9834;
+        </div>
+        <div class="noot-4">
+        &#9834;
+        </div>
+        <div class="noot-5">
+        &#9835; &#9833;
+        </div>
+        <div class="noot-6">
+        &#9833;
+        </div>
+        <div class="noot-7">
+        &#9839; &#9834;
+        </div>
+        <div class="noot-8">
+        &#9834;
+        </div>
+      </div>
 
-      <form action="t_rechercheArticle.ctrl.php" method="get">
-        <fieldset>
-          <label for="rechercher">Rechercher sur le site :</label>
-          <input type="text" name="rechercher" required/>
-          <input type="submit" value="ENVOYER">
-        </fieldset>
-</form>
-
-      
+      <form id= "barreRecherche"action="t_rechercheArticle.ctrl.php" method="get" autocomplete= "off">
+          <input name= "q" type="text" size= "15" placeholder= "search… "required/>
+          <input id= "button-submit" type="submit" value="">
+      </form>
 
 
 
