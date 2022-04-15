@@ -42,7 +42,7 @@
       </div>
 
       <form id= "barreRecherche"action="t_rechercheArticle.ctrl.php" method="get" autocomplete= "off">
-          <input name= "q" type="text" size= "15" placeholder= "search… "required/>
+          <input name= "rechercher" type="text" size= "15" placeholder= "search… "required/>
           <input id= "button-submit" type="submit" value="">
       </form>
 
