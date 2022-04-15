@@ -32,7 +32,7 @@ CREATE TABLE infoInstrument(
 CREATE TABLE Guitare(
    numArticle INT,
    materiauxManche VARCHAR(50),
-   type VARCHAR(50),
+   typeGuitare VARCHAR(50),
    materiauxBoitier VARCHAR(50),
    nbrCordes INT,
    PRIMARY KEY(numArticle),
@@ -56,7 +56,7 @@ CREATE TABLE Banjo(
 
 CREATE TABLE Violon(
    numArticle INT,
-   type VARCHAR(50),
+   typeViolon VARCHAR(50),
    typeFinition VARCHAR(50),
    nbrCordes INT,
    PRIMARY KEY(numArticle),
@@ -72,7 +72,7 @@ CREATE TABLE Luth(
 
 CREATE TABLE Harpe(
    numArticle INT,
-   type VARCHAR(50),
+   typeHarpe VARCHAR(50),
    nbrCordes INT,
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
@@ -87,7 +87,7 @@ CREATE TABLE Accordeon(
 
 CREATE TABLE Flute(
    numArticle INT,
-   type VARCHAR(50),
+   typeFlute VARCHAR(50),
    nbrTrou INT,
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
@@ -102,7 +102,7 @@ CREATE TABLE Tuba(
 
 CREATE TABLE Trombone(
    numArticle INT,
-   type VARCHAR(50),
+   typeTrombone VARCHAR(50),
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)
 );
@@ -116,7 +116,7 @@ CREATE TABLE Trompette(
 
 CREATE TABLE Batterie(
    numArticle INT,
-   type VARCHAR(50),
+   typeBatterie VARCHAR(50),
    typePeau VARCHAR(50),
    PRIMARY KEY(numArticle),
    FOREIGN KEY(numArticle) REFERENCES infoInstrument(numArticle)

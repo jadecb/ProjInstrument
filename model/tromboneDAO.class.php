@@ -15,7 +15,7 @@ class TromboneDAO{
     // Renvoi un tableau contenant les info de la Trombone, le tableau est vide si la Trombone n'existe pas
     function getTrombone(int $numArticle) : array{
         $dao = new TromboneDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, t.type FROM infoArticle ia, infoInstrument ii, trombone t where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND t.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, t.typeTrombone FROM infoArticle ia, infoInstrument ii, trombone t where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND t.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
@@ -23,7 +23,7 @@ class TromboneDAO{
     // Renvoi un tableau contenant les info de tous les Trombones, le tableau est vide si aucun Trombone n'existe
     function getAllTrombone() : array{
         $dao = new TromboneDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.type FROM infoArticle ia, infoInstrument ii, Trombone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.typeTrombone FROM infoArticle ia, infoInstrument ii, Trombone a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

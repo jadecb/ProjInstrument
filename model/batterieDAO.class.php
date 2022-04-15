@@ -15,7 +15,7 @@ class BatterieDAO{
     // Renvoi un tableau contenant les info de la Batterie, le tableau est vide si la Batterie n'existe pas
     function getBatterie(int $numArticle) : array{
         $dao = new BatterieDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, b.type, b.typePeau FROM infoArticle ia, infoInstrument ii, Batterie b where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND b.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, b.typeBatterie, b.typePeau FROM infoArticle ia, infoInstrument ii, Batterie b where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND b.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
@@ -23,7 +23,7 @@ class BatterieDAO{
     // Renvoi un tableau contenant les info de tous les Batterie, le tableau est vide si aucun Batterie n'existe
     function getAllBatterie() : array{
         $dao = new BatterieDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.type, a.typePeau FROM infoArticle ia, infoInstrument ii, Batterie a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.typeBatterie, a.typePeau FROM infoArticle ia, infoInstrument ii, Batterie a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

@@ -16,7 +16,7 @@ class FluteDAO{
     // Renvoi un tableau contenant les info du flute, le tableau est vide si le flute n'existe pas
     function getFlute(int $numArticle) : array {
         $dao = new FluteDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur,b.type, b.nbrTrou  FROM infoArticle ia, infoInstrument ii, flute b where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND b.numArticle='.$numArticle;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur,b.typeFlute, b.nbrTrou  FROM infoArticle ia, infoInstrument ii, flute b where ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND b.numArticle='.$numArticle;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
@@ -24,7 +24,7 @@ class FluteDAO{
     // Renvoi un tableau contenant les info de tous les flutes, le tableau est vide si aucun flute n'existe
     function getAllFlute() : array{
         $dao = new FluteDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.type, a.nbrTrou FROM infoArticle ia, infoInstrument ii, flute a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.typeFlute, a.nbrTrou FROM infoArticle ia, infoInstrument ii, flute a WHERE ia.numArticle=ii.numArticle AND ia.numArticle=a.numarticle';
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $resArray;

@@ -15,7 +15,7 @@ class AccordeonDAO{
     // Renvoi un tableau contenant les info de l'accordeon, le tableau est vide si l'accordeon n'existe pas
     function getAccordeon(int $numArticle) : array{
         $dao = new AccordeonDAO(); // instancie l'objet DAO
-        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon a WHERE ia.numArticle='.$numarticle.' AND ii.numArticle='.$numArticle.' AND a.numArticle='.$numArticle;;
+        $req = 'SELECT ia.numarticle, ia.nom, ia.prix, ii.materiauxprincipal, ii.couleur, ii.largeur, ii.longueur, ii.hauteur, a.nbrbouton FROM infoArticle ia, infoInstrument ii, Accordeon a WHERE ia.numArticle='.$numArticle.' AND ii.numArticle='.$numArticle.' AND a.numArticle='.$numArticle;;
         $sth = $this->db->query($req);
         $resArray = $sth->fetchAll(PDO::FETCH_BOTH);
         return $resArray;
