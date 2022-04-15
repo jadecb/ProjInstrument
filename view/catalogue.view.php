@@ -19,7 +19,7 @@
     <!-- Enfant -->  
         <div id="first">
                 <a href="t_catalogue.ctrl.php?choix=accessoire">
-                    <img src="../images/accessoire.jpg">
+                    <img src="../images/accessoire.jpg" width=700px; heigth=700px;>
                     
                     <h2>
                         Accessoires
