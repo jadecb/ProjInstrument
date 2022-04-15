@@ -40,6 +40,17 @@ class AccordeonDAO{
         $sth = $this->db->exec($req);
     }
 
+    //edition d'un accordeon dnas la base
+    function editAccordeon(Accordeon $a, int $numArticle) : void{
+        $dao = new AccordeonDAO();
+        $req = 'UPDATE infoArticle SET (nom='.$a->nom.', prix='.$a->prix.' where numArticle = '.$numArticle.')';
+        $sth = $this->db->exec($req);
+        $req = 'UPDATE infoInstrument SET (materiauxPrincipal='.$a->materiauxPrincipal.', couleur='.$a->couleur.', largeur='.$a->largeur.', longueur='.$a->longueur.', hauteur='.$a->hauteur.'  where numArticle = '.$numArticle.')';
+        $sth = $this->db->exec($req);
+        $req = 'UPDATE Accordeon SET (nbrTouche='.$a->nbrBouton.', where numArticle = '.$numArticle.')';
+        $sth = $this->db->exec($req);
+    }
+
 }
 
 ?>

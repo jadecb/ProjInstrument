@@ -51,15 +51,17 @@ require_once('../model/InfoArticleAttributs.php');
 if($article == "accessoire"){
     require_once('../model/InfoAccessoireAttributs.php');
     $InfoArticleAttributs = array_merge($InfoArticleAttributs,$InfoAccessoireAttributs);
+    $infoarticle = $infoArticleDAO->getArticle($numarticle);
+
 }
 else{
     require_once('../model/InfoInstrumentAttributs.php');
     require_once('../model/InstrumentsAttributs.php');
     $InfoArticleAttributs = array_merge($InfoArticleAttributs, $InfoInstrumentAttributs);
     $InfoArticleAttributs[] = array_keys($InstrumentsAttributs[$article])[0];
+    $infoarticle = $infoArticleDAO->getInstrument($numarticle);
 }
 
-$infoarticle = $infoArticleDAO->getInstrument($numarticle);
 
 
 $view = new View();
@@ -68,6 +70,7 @@ $view->assign('gestionnaire',$gestionnaire);
 $view->assign('type',$article);
 $view->assign('infoarticle',$infoarticle);
 $view->assign('nbArticlePanier', $nbArticlePanier);
+$view->assign('allInstruments',$allInstruments);
 $view->display('editerArticle.view.php');
 
 ?>
