@@ -408,18 +408,18 @@ input[type=submit]:hover{
 #mainpage section div:nth-of-type(even) {
     background-color: #272829;
 }
-
-#maipage h3 {
-    color: #ffffff;
-    margin: auto;
-    font-size: 50px;
-}
-
 h2 {
     color: #03030307;
     margin: auto;
     font-size: 50px;
 }
+
+#mainpage section div h2 {
+    color: #ffffff;
+    margin: auto;
+    font-size: 50px;
+}
+
 
 
 .scroll-parent {
