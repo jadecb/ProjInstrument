@@ -408,7 +408,7 @@ input[type=submit]:hover{
 #mainpage section div:nth-of-type(even) {
     background-color: #272829;
 }
-h2 {
+#main div h2 {
     color: #03030307;
     margin: auto;
     font-size: 50px;
