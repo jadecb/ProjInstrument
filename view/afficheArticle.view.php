@@ -16,6 +16,8 @@
                     ?>cm
                     <?php elseif($attribut=='prix'):?>
                         €
+                    <?php elseif($attribut=='poids'):?>
+                    gr
                     <?php endif;?>
                 
                     
