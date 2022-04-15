@@ -16,7 +16,7 @@
                 <?php if($key!='numArticle'): ?>
                     <?=ucfirst($key)?>
                     <label for="<?=$key?>"></label>
-                    <input type="text" name="<?=($key=='nom')?'nomArticle':$key;?>" value="<?=$infoarticle[$key]?>" required/>
+                    <input type="text" name="<?=$key?>" value="<?=$infoarticle[$key]?>" required/>
                 <?php endif; ?>
             <?php endforeach;?>
             <input type="submit" value="ENVOYER">

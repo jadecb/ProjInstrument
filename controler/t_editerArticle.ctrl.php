@@ -67,13 +67,15 @@ require_once(__DIR__.'/../model/'.$type.'DAO.class.php');
 foreach($InfoArticleAttributs as $name){
 
     if(isset($_GET[$name])){
-        
         $a->__set($name, $_GET[$name]);
     }
 }
+
+$a->__set('nomArticle', $_GET['nom']);
 var_dump($a);
 
     $method='edit'.ucfirst($type);
+    var_dump($a->nomArticle);
     $typeDAO->$method($a, $numArticle);
 }
 
