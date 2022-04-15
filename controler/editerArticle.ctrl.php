@@ -25,6 +25,11 @@ else{
     header('Location: index.ctrl.php');
 }
 
+if(isset($_SESSION['prenom']) && isset($_SESSION['nbArticlePanier'])){
+    $prenom = $_SESSION['prenom'];
+    $nbArticlePanier = $_SESSION['nbArticlePanier'];
+}
+
 // Vérification que le numéro d'article est bien récupéré sinon renvoi sur index
 if(isset($_GET['numArticle'])){
     $numarticle = $_GET['numArticle'];
@@ -41,6 +46,7 @@ require_once(__DIR__.'/../model/infoArticleDAO.class.php');
 $infoArticleDAO = new infoArticleDAO();
 $article = $infoArticleDAO->getType($numarticle);
 
+
 require_once('../model/InfoArticleAttributs.php');
 if($article == "accessoire"){
     require_once('../model/InfoAccessoireAttributs.php');
@@ -53,7 +59,7 @@ else{
     $InfoArticleAttributs[] = array_keys($InstrumentsAttributs[$article])[0];
 }
 
-$infoarticle = $infoArticleDAO->getArticle($numarticle);
+$infoarticle = $infoArticleDAO->getInstrument($numarticle);
 
 
 $view = new View();
@@ -61,6 +67,7 @@ $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 $view->assign('type',$article);
 $view->assign('infoarticle',$infoarticle);
+$view->assign('nbArticlePanier', $nbArticlePanier);
 $view->display('editerArticle.view.php');
 
 ?>

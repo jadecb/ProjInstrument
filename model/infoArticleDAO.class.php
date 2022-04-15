@@ -64,10 +64,21 @@ class InfoArticleDAO{
             $req = 'SELECT * FROM '.$typeArticle.' i, infoArticle ia WHERE i.numArticle = ia.numArticle AND i.numArticle='.$numArticle;
             $sth = $this->db->query($req);
             $Array = $sth->fetchAll(PDO::FETCH_ASSOC);
+            var_dump($Array);
         }
         return (isset($Array[0]))?$Array[0]:array();
     }
 
+
+    function getInstrument(int $numArticle) : array {
+        $res = $this->getArticle($numArticle); //numArticle doit obligatoirement être le numarticle d'un instrument
+        $req = 'SELECT * FROM infoInstrument ii WHERE ii.numArticle ='.$numArticle;
+        $sth = $this->db->query($req);
+        $Array = $sth->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($Array);
+        $res = array_merge($res, $Array[0]);
+        return $res;
+    }
 }
 
 ?>

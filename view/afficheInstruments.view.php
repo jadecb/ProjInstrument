@@ -16,7 +16,7 @@
                 <div id="panier"><a href="t_panier.ctrl.php?numArticle=<?=$tabInfosInstrument['numArticle']?>"><img src="../images/panier.png" alt=""></a></div>
             <?php endif; ?>
             <?php if (isset($gestionnaire) && $gestionnaire==1): ?>
-                <div id="edit"><a href="t_editerArticle.ctrl.php?numArticle=<?=$tabInfosInstrument['numArticle']?>"><p>Editer l'article</p></a></div>
+                <div id="edit"><a href="editerArticle.ctrl.php?numArticle=<?=$tabInfosInstrument['numArticle']?>"><p>Editer l'article</p></a></div>
             <?php endif; ?>
         </div>
     <?php endforeach; ?>
