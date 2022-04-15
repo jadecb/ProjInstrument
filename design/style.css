@@ -366,14 +366,14 @@ input[type=submit]:hover{
 #mainpage {
     display:flex;
     flex-wrap:wrap;
-    margin-left:5%;
+    margin-left:15%;
     margin-right:15%;
     justify-content: center;
 }
 
 #mainpage figure{
     top: 20px;
-    margin:10px;
+    margin:50px;
 }
 #mainpage figure a img {
     display:flex;
