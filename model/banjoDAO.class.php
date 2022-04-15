@@ -33,7 +33,6 @@ class BanjoDAO{
 
     // Ajoute un banjo dans la base
     function ajoutBanjo(Banjo $b) : void {
-        var_dump($b);
         $dao = new BanjoDAO(); // instancie l'objet DAO
         $req = 'INSERT INTO infoArticle VALUES ('.$b->numArticle.',"'.$b->nomArticle.'",'.$b->prix.')';
         $sth = $this->db->exec($req);
