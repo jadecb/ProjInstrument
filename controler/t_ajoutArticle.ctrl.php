@@ -13,8 +13,9 @@ else{
 }
 
 // Vérification que le client est bien gestionnaire sinon renvoi sur index
-if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1 && $_SESSION['nbArticlePanier']){
     $gestionnaire = true;
+    $nbArticlePanier = $_SESSION['nbArticlePanier'];
 }
 else{
     header('Location: index.ctrl.php');
@@ -40,6 +41,7 @@ if($article == "instrument"){
 $view = new View();
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
+$view->assign('nbArticlePanier',$nbArticlePanier);
 if($article == "instrument"){
     $view->assign('allInstruments',$allInstruments);
     $view->display('choixAjoutInstrument.view.php');

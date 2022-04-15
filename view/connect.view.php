@@ -9,7 +9,7 @@
         <fieldset>
             <label for="mail">Mail</label>
             <input type="email" name="mail" required/>
-            <label for="mdp">Mot de passe (8 characters minimum)</label>
+            <label for="mdp">Mot de passe</label>
             <input type="password" name="mdp" minlength="8" required/>
         
             <input type="submit" value="CONNEXION">

@@ -23,12 +23,9 @@ if(isset($_SESSION['numClient'])){
 $panierdao = new PanierDAO();
 $infoArticleDAO = new InfoArticleDAO();
 $AllNumArticles = $panierdao->getAllNumArticle($numclient);
-
-foreach($AllNumArticles as $numArticle){
-    $allArticle[] = $infoArticleDAO->getArticle(intval($numArticle));
+foreach($AllNumArticles as $tab){
+    $allArticle[] = $infoArticleDAO->getArticle(intval($tab['numArticle']));
 }
-
-
 
 // tableau contenant tous les noms d'instrument
 
@@ -44,7 +41,10 @@ if(isset($prenom)){
 if(isset($gestionnaire)){
     $view->assign('gestionnaire',$gestionnaire);
 }
-$view->assign('allArticle',$allArticle);
+if(isset($allArticle)){
+	$view->assign('allArticle',$allArticle);	
+}
+$view->assign('numClient',$numclient);
 $view->display('panier.view.php');
 
 ?>

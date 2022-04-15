@@ -44,7 +44,7 @@ class InfoArticleDAO{
     // null si non trouvée
     function getType(int $numArticle) : string {
 
-        require_once('../model/allArticles.php');
+        require('../model/allArticles.php');
         $dao = new InfoArticleDAO();
         $i = 0;
         while($i < count($allArticles) && !isset($Array[0])){
@@ -59,7 +59,6 @@ class InfoArticleDAO{
     // renvoi le type d'article (=nom de la table dans laquelle il se trouve) de numéro $numArticle
     // null si non trouvée
     function getArticle(int $numArticle) : array {
-
         $typeArticle = $this->getType($numArticle);
         if(!empty($typeArticle)){
             $req = 'SELECT * FROM '.$typeArticle.' i, infoArticle ia WHERE i.numArticle = ia.numArticle AND i.numArticle='.$numArticle;
