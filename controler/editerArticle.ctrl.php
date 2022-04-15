@@ -71,6 +71,7 @@ $view->assign('type',$article);
 $view->assign('infoarticle',$infoarticle);
 $view->assign('nbArticlePanier', $nbArticlePanier);
 $view->assign('allInstruments',$allInstruments);
+$view->assign('numArticle', $numarticle);
 $view->display('editerArticle.view.php');
 
 ?>
