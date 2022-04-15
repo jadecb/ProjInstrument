@@ -21,6 +21,7 @@ $a = null;
             <h2>Découvrez nos produits phares :</h2>
         </div> 
         <div id=third>
+        <image class=positionImage>
         <?php for($i=0; $i<3; $i++): ?> <!-- "t_catalogueInstrument.ctrl.php?instrument=<?=$instrument?> !-->
         <figure>
             <a href="t_catalogueInstrument.ctrl.php?instrument=<?=$allInstruments[$i]?>">
@@ -30,6 +31,7 @@ $a = null;
             </figcaption>
         </a></figure>
             <?php endfor; ?>
+        </image>
         </div>
     </section>
     
