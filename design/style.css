@@ -373,6 +373,8 @@ input[type=submit]:hover{
 }
 
 #mainpage figure{
+    display:flex;
+    flex-wrap:wrap;
     margin:50px;
 }
 #mainpage figure a img {
