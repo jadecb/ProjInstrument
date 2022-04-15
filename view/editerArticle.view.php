@@ -2,11 +2,19 @@
 
 <main>
 
-    <form action="t_editerArticle.ctrl.php" method="get">
+    <form action="t_editerArticle.ctrl.php?type=<?=$type?>" method="get">
         <fieldset>
                 
                 <p>Editer l'article : </p>
-                <?php var_dump($infoarticle);?>
+
+<?php if ($type!="accessoire"):?>
+            <label for="instrument">Quel instrument ?</label>
+            <select name="instrument" id="instrument-select"> 
+            <?php foreach($allInstruments as $value): ?>
+                <option value="<?=$value?>"><?=$value?></option>
+            <?php endforeach; ?>
+<?php endif;?>
+
             <!-- partie dynamique sur les articles !-->
             <?php foreach($infoarticle as $key => $value):?>
                 <?php if($key!='numArticle'): ?>
