@@ -364,16 +364,16 @@ input[type=submit]:hover{
 
 
 #mainpage {
+    position: relative;
     display:flex;
     flex-wrap:wrap;
-    margin-left:5%;
+    margin-left:15%;
     margin-right:15%;
     justify-content: center;
 }
 
 #mainpage figure{
-    top: 20px;
-    margin:10px;
+    margin:50px;
 }
 #mainpage figure a img {
     display:flex;
@@ -390,6 +390,12 @@ input[type=submit]:hover{
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+}
+.positionImage{
+    display:flex;
+    margin: 50px;
+    top: 50%;
+    
 }
 
 #mainpage section div {

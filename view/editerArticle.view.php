@@ -7,6 +7,8 @@
                 
                 <p>Editer l'article : </p>
             <input type="hidden" name="type" value="<?=$type?>"/>
+            <input type="hidden" name="numArticle" value="<?=$numArticle?>"/>
+
 
 
             <!-- partie dynamique sur les articles !-->
