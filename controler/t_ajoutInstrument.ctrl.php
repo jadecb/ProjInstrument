@@ -18,7 +18,8 @@ else{
 }
 
 // Vérification que le client est bien gestionnaire sinon renvoi sur index
-if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1 && $_SESSION['nbArticlePanier']){
+	$nbArticlePanier = $_SESSION['nbArticlePanier'];
     $gestionnaire = true;
 }
 else{
@@ -102,6 +103,7 @@ $DAO->$method($$instrument);
 $view = new View();
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
+$view->assign('nbArticlePanier',$nbArticlePanier);
 $view->assign('allInstrument',$allInstrument);
 $view->display('index.view.php');
 

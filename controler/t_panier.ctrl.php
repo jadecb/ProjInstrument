@@ -32,8 +32,8 @@ catch(\PDOException $e) {
     die("Cet article est déjà dans votre panier.");
 }
 
-$nbArticlePanier = $panierdao->getNbrArticlePanier($_SESSION['numClient']);
-
+$_SESSION['nbArticlePanier'] = $panierdao->getNbrArticlePanier($_SESSION['numClient']);
+$nbArticlePanier = $_SESSION['nbArticlePanier'];
 // tableau contenant tous les noms d'instrument
 
 

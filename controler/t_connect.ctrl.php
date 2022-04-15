@@ -33,10 +33,10 @@ if(!empty($infoClient)){
     foreach($infoClient[0] as $key => $value){
         $_SESSION[$key] = $value;
     }
+    $nbArticlePanier = $panierDAO->getNbrArticlePanier($_SESSION['numClient']);
+    $_SESSION['nbArticlePanier'] = $nbArticlePanier;
 }
 
-$nbArticlePanier = $panierDAO->getNbrArticlePanier($_SESSION['numClient']);
-$_SESSION['nbArticlePanier'] = $nbArticlePanier;
 /* *** GESTION DE LA VUE *** */
 if(isset($_SESSION['prenom']) && isset($_SESSION['nbArticlePanier'])){
     $prenom = $_SESSION['prenom'];
@@ -46,7 +46,6 @@ if(isset($_SESSION['prenom']) && isset($_SESSION['nbArticlePanier'])){
 if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
     $gestionnaire = true;
 }
-
 
 $view = new View();
 if(!empty($infoClient)){

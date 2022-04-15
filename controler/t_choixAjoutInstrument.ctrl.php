@@ -11,8 +11,9 @@ else{
     header('Location: index.ctrl.php');
 }
 
-if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
+if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1 && $_SESSION['nbArticlePanier']){
     $gestionnaire = true;
+    $nbArticlePanier = $_SESSION['nbArticlePanier'];
 }
 else{
     header('Location: index.ctrl.php');
@@ -38,6 +39,7 @@ $view = new View();
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 $view->assign('instrument',$instrument);
+$view->assign('nbArticlePanier',$nbArticlePanier);
 $view->assign('instrumentAttribut',$instrumentAttribut);
 $view->display('ajoutInstrument.view.php');
 

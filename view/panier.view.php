@@ -4,6 +4,24 @@
     
     <p>Panier de <?=$prenom?></p>
 
+	<?php if(isset($allArticle)): ?>
+		<div>
+		<?php foreach($allArticle as $tabInfosArticle): ?>
+			<img src="../images/<?=$tabInfosArticle['numArticle']?>.jpg"/>
+			<div>
+			<?=$tabInfosArticle['nom']?>
+			<br>
+			<?=$tabInfosArticle['prix']?>
+			<a href="t_retraitPanier.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>&numClient=<?=$numClient?>">
+				<img src="../images/corbeille.jpg" alt="logo_poubelle"/>
+			</a>
+			</div>
+		<?php endforeach; ?>
+		</div>
+	<?php else: ?>
+		<p>Panier vide </p>
+	<?php endif; ?>
+
 </main>
 
 
