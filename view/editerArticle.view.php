@@ -2,11 +2,11 @@
 
 <main>
 
-    <form action="t_editerArticle.ctrl.php?type=<?=$type?>" method="get">
+    <form action="t_editerArticle.ctrl.php" method="get">
         <fieldset>
                 
                 <p>Editer l'article : </p>
-
+            <input type="hidden" name="type" value=<?=$type?>/>
 <?php if ($type!="accessoire"):?>
             <label for="instrument">Quel instrument ?</label>
             <select name="instrument" id="instrument-select"> 
