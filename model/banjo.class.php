@@ -22,7 +22,7 @@ class Banjo extends infoInstrument{
         }
     }
 
-    public function __set(string $name, mixed $value): void{
+    public function __set(string $name, $value): void{
         if(isset($this->$name)){
             $this->$name = $value;
         }
