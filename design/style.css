@@ -409,11 +409,18 @@ input[type=submit]:hover{
     background-color: #272829;
 }
 
-h2 {
+#maipage h2 {
     color: #ffffff;
     margin: auto;
     font-size: 50px;
 }
+
+h2 {
+    color: #03030307;
+    margin: auto;
+    font-size: 50px;
+}
+
 
 .scroll-parent {
     height: 100vh;
