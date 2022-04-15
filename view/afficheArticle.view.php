@@ -28,9 +28,7 @@
             <?php if(isset($prenom)): ?>
                 <div id="panier"><a href="t_panier.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>"><img src="../images/panier.png" alt=""></a></div>
             <?php endif; ?>
-            <?php if (isset($gestionnaire) && $gestionnaire==1): ?>
-                <div id="edit"><a href="editerArticle.ctrl.php?numArticle=<?=$tabInfosArticle['numArticle']?>"><p>Editer l'article</p></a></div>
-            <?php endif; ?>
+            
         </div>
 </main>
 
