@@ -14,7 +14,6 @@ if(isset($_SESSION['gestionnaire']) && $_SESSION['gestionnaire']==1){
     $gestionnaire = true;
 }
 
-
 /* *** PARTIE USAGE DU MODELE *** */
 require_once('../model/allInstruments.php');
 // tableau contenant tous les noms d'instrument

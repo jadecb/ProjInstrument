@@ -1,5 +1,5 @@
 <?php
 
-$InfoArticleAttributs = array("numArticle", "nom", "prix");
+$InfoArticleAttributs = array("numArticle", "nomArticle", "prix");
 
 ?>
