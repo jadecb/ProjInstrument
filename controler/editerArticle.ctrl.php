@@ -69,6 +69,7 @@ $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 $view->assign('type',$article);
 $view->assign('infoarticle',$infoarticle);
+var_dump($infoarticle);
 $view->assign('nbArticlePanier', $nbArticlePanier);
 $view->assign('allInstruments',$allInstruments);
 $view->assign('numArticle', $numarticle);
