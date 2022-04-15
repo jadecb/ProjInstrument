@@ -8,27 +8,23 @@
             </nav>
             <!-- Enfant -->  
     <div id="second">
-    <figure>
         <a href="t_catalogue.ctrl.php?choix=instrument">
             <img src="../images/instruments.jpg">
             
-            <figcaption>
+            <h2>
                         Instruments de musique
-            </figcaption>
+            </h2>
         </a>
-    </figure>
     </div>
     <!-- Enfant -->  
         <div id="first">
-            <figure>
                 <a href="t_catalogue.ctrl.php?choix=accessoire">
                     <img src="../images/accessoire.jpg">
                     
-                    <figcaption>
+                    <h2>
                         Accessoires
-                    </figcaption>
+                    </h2>
                 </a>
-            </figure>
         </div>
 </section>
 </main>

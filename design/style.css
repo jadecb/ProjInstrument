@@ -345,8 +345,8 @@ input[type=submit]:hover{
 }
 
 #unInstrument img{
-    width:200px;
-    height: 200px;
+    width:100px;
+    height: 100px;
 }
 
 #afficheInstrument div a div {
@@ -427,7 +427,7 @@ input[type=submit]:hover{
     margin: auto;
     font-size: 50px;
 }
-#catalogue section div figcaption {
+#catalogue section div h2 {
     color: #ffffff;
     margin: auto;
     font-size: 50px;
