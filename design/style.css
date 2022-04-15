@@ -372,17 +372,72 @@ input[type=submit]:hover{
 }
 
 #mainpage figure{
+    top: 20px;
     margin:10px;
 }
 #mainpage figure a img {
+    display:flex;
     width:200px;
     height:200px;
 }
 #mainpage figure a figcaption{
-    color:var(--dark-blue);
+    color:var(--white);
     text-transform: uppercase;
     text-align:center;
 }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#mainpage section div {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(59, 74, 94);
+    display: flex;
+}
+
+#mainpage section div:nth-of-type(even) {
+    background-color: #272829;
+}
+
+h2 {
+    color: #ffffff;
+    margin: auto;
+    font-size: 50px;
+}
+
+.scroll-parent {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.scroll-parent > div {
+    scroll-snap-align: start;
+}
+
+.dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 5px;
+}
+
+
 
 /*******************/
 /****TEXTE**********/
