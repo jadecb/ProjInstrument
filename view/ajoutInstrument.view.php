@@ -5,8 +5,8 @@
     <form action="t_ajoutInstrument.ctrl.php" method="get">
         <fieldset>
                 <!-- Partie statique sur les "infoArticle" -->
-                <label for="nomArticle">Nom</label>
-                <input type="text" name="nomArticle" required/>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" required/>
                 <label for="prix">Prix</label>
                 <input type="number" name="prix" min="0" step="0.01" required/>
                 <!-- Partie statique sur les "infoInstrument" -->

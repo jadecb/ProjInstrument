@@ -56,11 +56,8 @@ $$instrument = new $nomObjetMaj();
 // si un est manquant renvoi au controleur d'avant
 require('../model/InfoArticleAttributs.php');
 foreach($InfoArticleAttributs as $name){
-    if(isset($_GET[$name])){
+    if($name!='numArticle' && isset($_GET[$name])){
         $$instrument->__set($name,$_GET[$name]);
-    }
-    else{
-        header('Location: ajoutArticle.ctrl.php');
     }
 }
 
@@ -72,9 +69,6 @@ foreach($InfoInstrumentAttributs as $name){
     if(isset($_GET[$name])){
         $$instrument->__set($name,$_GET[$name]);
     }
-    else{
-        header('Location: ajoutArticle.ctrl.php');
-    }
 }
 
 // Récupération des attributs propres à l'objet $instrument dans la query string
@@ -85,9 +79,6 @@ $instrumentAttribut = $InstrumentsAttributs[$instrument];
 foreach($instrumentAttribut as $nameAttribut => $tab){
     if(isset($_GET[$nameAttribut])){
         $$instrument->__set($nameAttribut,$_GET[$nameAttribut]);
-    }
-    else{
-        header('Location: ajoutArticle.ctrl.php');
     }
 }
 
@@ -104,7 +95,7 @@ $view = new View();
 $view->assign('prenom',$prenom);
 $view->assign('gestionnaire',$gestionnaire);
 $view->assign('nbArticlePanier',$nbArticlePanier);
-$view->assign('allInstrument',$allInstrument);
+$view->assign('allInstruments',$allInstruments);
 $view->display('index.view.php');
 
 ?>
